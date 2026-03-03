@@ -4,9 +4,10 @@
 
 Microsoft defines agent readiness as an organization’s ability to **design, deploy, and integrate AI agents effectively and at scale relative to enterprise objectives**, and frames readiness as an integration of **strategic vision and operational execution** across **five pillars**.
 This framework was featured at **Microsoft Ignite 2025** as practical guidance to help organizations assess and accelerate readiness for agents at scale.
- [The Agent Readiness Framework: Pillars & Practices](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)
+
+[The Agent Readiness Framework: Pillars & Practices](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)
  
- [Agent Readiness Framework](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf)  
+[Agent Readiness Framework](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf)  
 
 ### Five pillars (framework → product implementation)
 
@@ -101,34 +102,32 @@ The product includes a **Users & Roles** area to manage access and permissions, 
 
 ## Screenshots
 
-> Place screenshots in `docs/screenshots/` and update filenames below as needed.
-
 - **AI Agent Central (home)**
-  ![AI Agent Central](docs/screenshots/ai-agent-central.png)
+  ![AI Agent Central](images/ai-agent-central.png)
 
 - **Agent Registry (list)**
-  ![Agent Registry](docs/screenshots/agent-registry.png)
+  ![Agent Registry](images/agent-registry.png)
 
 - **Register New Agent**
-  ![Register New Agent](docs/screenshots/register-new-agent.png)
+  ![Register New Agent](images/register-new-agent.png)
 
 - **Edit Agent**
-  ![Edit Agent](docs/screenshots/edit-agent.png)
+  ![Edit Agentimages/edit-agent.png)
 
 - **Readiness & Pillar Details**
-  ![Readiness Details](docs/screenshots/readiness-details.png)
+  ![Readiness Details](images/readiness-details.png)
 
 - **Edit Evidence (modal)**
-  ![Edit Evidence](docs/screenshots/edit-evidence.png)
+  ![Edit Evidence](images/edit-evidence.png)
 
 - **Reporting Dashboard**
-  ![Reporting Dashboard](docs/screenshots/reporting-dashboard.png)
+  ![Reporting Dashboard](images/reporting-dashboard.png)
 
 - **Users & Roles**
-  ![Users & Roles](docs/screenshots/users-and-roles.png)
+  ![Users & Roles](images/users-and-roles.png)
 
 - **Business Units**
-  ![Business Units](docs/screenshots/business-units.png)
+  ![Business Units](images/business-units.png)
 
 ---
 
