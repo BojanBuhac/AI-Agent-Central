@@ -112,7 +112,7 @@ The product includes a **Users & Roles** area to manage access and permissions, 
   ![Register New Agent](images/register-new-agent.png)
 
 - **Edit Agent**
-  ![Edit Agentimages/edit-agent.png)
+  ![Edit Agent](images/edit-agent.png)
 
 - **Readiness & Pillar Details**
   ![Readiness Details](images/readiness-details.png)
