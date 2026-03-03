@@ -129,6 +129,3 @@ The product includes a **Users & Roles** area to manage access and permissions, 
 - **Business Units**
  ![screenshot](images/business-units.png)
 
----
-
-## Repository structure (recommended)
