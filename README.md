@@ -1,30 +1,33 @@
+# AI Agent Central — Enterprise AI Governance
+
 ## Built on Microsoft’s Agent Readiness Framework (Ignite 2025)
 
-Microsoft defines agent readiness as an organization’s ability to **design, deploy, and integrate AI agents effectively and at scale relative to enterprise objectives**, and frames readiness as an integration of **strategic vision and operational execution** across **five pillars**. [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf)  
-This framework was featured at **Microsoft Ignite 2025** as practical guidance to help organizations assess and accelerate readiness for agents at scale. [1](https://ignite.microsoft.com/en-US/sessions/4320b648-ca6c-4056-8ac9-c0fc6068df03)
+Microsoft defines agent readiness as an organization’s ability to **design, deploy, and integrate AI agents effectively and at scale relative to enterprise objectives**, and frames readiness as an integration of **strategic vision and operational execution** across **five pillars**.
+This framework was featured at **Microsoft Ignite 2025** as practical guidance to help organizations assess and accelerate readiness for agents at scale.
+ [The Agent Readiness Framework: Pillars & Practices](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)
+ 
+ [Agent Readiness Framework](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf)  
 
 ### Five pillars (framework → product implementation)
 
 The Agent Readiness Framework describes five pillars commonly presented as:
-1. **Business & AI Strategy** [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf)  
-2. **Business Process Mapping** [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf)  
-3. **Technology & Data Foundation** [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf)  
-4. **Organizational Readiness & Culture** [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf)  
-5. **Security & Governance** [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf)  
+1. **Business & AI Strategy** 
+2. **Business Process Mapping** 
+3. **Technology & Data Foundation**
+4. **Organizational Readiness & Culture**
+5. **Security & Governance** 
 
 Agent Registry implements these as **five operational readiness pillars** used throughout the UI:
 
 | Product Pillar (UI) | Framework Alignment | What Agent Registry Enforces |
 |---|---|---|
-| **Strategy‑Led** | Business & AI Strategy | Captures business intent, sponsorship, success criteria, and alignment to enterprise objectives. [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf) |
-| **Process‑Aware** | Business Process Mapping | Structures workflow context and evidence so agents operate within defined process boundaries. [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[1](https://ignite.microsoft.com/en-US/sessions/4320b648-ca6c-4056-8ac9-c0fc6068df03) |
-| **Platform‑Based** | Technology & Data Foundation | Tracks platform choices and references to support scalable, enterprise-approved deployment foundations. [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf) |
-| **People‑Ready** | Organizational Readiness & Culture | Encourages adoption planning and readiness artifacts that build trust and enable responsible rollout. [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf) |
-| **Governed** | Security & Governance | Evidence-backed controls, accountability, and review cadence to support safe, compliant scaling. [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[1](https://ignite.microsoft.com/en-US/sessions/4320b648-ca6c-4056-8ac9-c0fc6068df03) |
+| **Strategy‑Led** | Business & AI Strategy | Captures business intent, sponsorship, success criteria, and alignment to enterprise objectives.|
+| **Process‑Aware** | Business Process Mapping | Structures workflow context and evidence so agents operate within defined process boundaries.|
+| **Platform‑Based** | Technology & Data Foundation | Tracks platform choices and references to support scalable, enterprise-approved deployment foundations.|
+| **People‑Ready** | Organizational Readiness & Culture | Encourages adoption planning and readiness artifacts that build trust and enable responsible rollout.|
+| **Governed** | Security & Governance | Evidence-backed controls, accountability, and review cadence to support safe, compliant scaling.|
 
-> **Why this matters:** The framework’s value is in connecting **strategy readiness** (strategy + process) with **execution readiness** (technology/data + culture + governance), and Agent Registry is built to make that connection explicit through evidence and lifecycle controls. [3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf)[2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)
-
-
+> **Why this matters:** The framework’s value is in connecting **strategy readiness** (strategy + process) with **execution readiness** (technology/data + culture + governance), and Agent Registry is built to make that connection explicit through evidence and lifecycle controls.
 
 ---
 
