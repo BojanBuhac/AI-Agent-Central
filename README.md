@@ -51,20 +51,16 @@ Agent Registry implements these as **five operational readiness pillars** used t
   - *Autonomy Tier*
   - *Description*
   - *Platform Reference*
-- Assign **Ownership & Governance** fields:
-  - *Executive Sponsor*
-  - *Business Owner*
-  - *Technical Owner*
-  - *Business Unit*
+- Assign **Ownership & Governance** fields
 - Maintain a **review schedule** with a **Next Review Date**.
 
 ### ✅ Five-Pillar Readiness Model (Evidence-Based)
-Agent readiness is tracked across five pillars (visible in the UI):
+Agent readiness is tracked across five pillars:
 
-1. **Strategy‑Led** — aligned with business objectives and roadmap  
-2. **Process‑Aware** — using approved workflows and automation  
-3. **Platform‑Based** — built on approved enterprise platforms  
-4. **People‑Ready** — training, change management, and adoption plans  
+1. **Strategy‑Led** - aligned with business objectives and roadmap  
+2. **Process‑Aware** - using approved workflows and automation  
+3. **Platform‑Based** - built on approved enterprise platforms  
+4. **People‑Ready** - training, change management, and adoption plans  
 5. **Governed** — security, compliance, and monitoring frameworks  
 
 Each pillar can be supported by **evidence items**. Evidence includes:
