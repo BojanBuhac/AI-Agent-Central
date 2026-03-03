@@ -84,6 +84,14 @@ A dedicated **Reporting Dashboard** provides visual analytics such as:
 4. Use **Reporting** to monitor adoption and governance coverage.
 
 ---
+## Prerequisites
+1. Power Platform Environement with Dataverse
+2. Administrative privileges in specific environment
+
+## Deployment
+1. Navigate to https://make.preview.powerapps.com
+2. Click Solutions and select Import solution from command bar
+3. Select AIAgentsGovernanceHuB_1_x_x_x_managed.zip and follow the import Solution process 
 
 ## Screenshots
 
