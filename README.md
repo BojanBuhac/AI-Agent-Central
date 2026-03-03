@@ -103,31 +103,31 @@ The product includes a **Users & Roles** area to manage access and permissions, 
 ## Screenshots
 
 - **AI Agent Central (home)**
-  ![AI Agent Central](images/ai-agent-central.png)
+  ![screenshot](images/ai-agent-central.png)
 
 - **Agent Registry (list)**
-  ![Agent Registry](images/agent-registry.png)
+  ![screenshot](images/agent-registry.png)
 
 - **Register New Agent**
-  ![Register New Agent](images/register-new-agent.png)
+  ![screenshot](images/register-new-agent.png)
 
 - **Edit Agent**
-  ![Edit Agent](images/edit-agent.png)
+  ![screenshot](images/edit-agent.png)
 
 - **Readiness & Pillar Details**
-  ![Readiness Details](images/readiness-details.png)
+  ![screenshot](images/readiness-details.png)
 
 - **Edit Evidence (modal)**
-  ![Edit Evidence](images/edit-evidence.png)
+  ![screenshot](images/edit-evidence.png)
 
 - **Reporting Dashboard**
-  ![Reporting Dashboard](images/reporting-dashboard.png)
+ ![screenshot](images/reporting-dashboard.png)
 
 - **Users & Roles**
-  ![Users & Roles](images/users-and-roles.png)
+  ![screenshot](images/users-and-roles.png)
 
 - **Business Units**
-  ![Business Units](images/business-units.png)
+ ![screenshot](images/business-units.png)
 
 ---
 
