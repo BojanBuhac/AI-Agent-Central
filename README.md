@@ -1,2 +1,132 @@
-# AI-Agent-Central
-AI Agent Central is an enterprise governance hub for AI agents. It helps teams register agents, validate readiness across five pillars, and manage the agent lifecycle from draft to approval using evidence-driven governance.
+## Built on Microsoft’s Agent Readiness Framework (Ignite 2025)
+
+Microsoft defines agent readiness as an organization’s ability to **design, deploy, and integrate AI agents effectively and at scale relative to enterprise objectives**, and frames readiness as an integration of **strategic vision and operational execution** across **five pillars**. [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf)  
+This framework was featured at **Microsoft Ignite 2025** as practical guidance to help organizations assess and accelerate readiness for agents at scale. [1](https://ignite.microsoft.com/en-US/sessions/4320b648-ca6c-4056-8ac9-c0fc6068df03)
+
+### Five pillars (framework → product implementation)
+
+The Agent Readiness Framework describes five pillars commonly presented as:
+1. **Business & AI Strategy** [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf)  
+2. **Business Process Mapping** [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf)  
+3. **Technology & Data Foundation** [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf)  
+4. **Organizational Readiness & Culture** [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf)  
+5. **Security & Governance** [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf)  
+
+Agent Registry implements these as **five operational readiness pillars** used throughout the UI:
+
+| Product Pillar (UI) | Framework Alignment | What Agent Registry Enforces |
+|---|---|---|
+| **Strategy‑Led** | Business & AI Strategy | Captures business intent, sponsorship, success criteria, and alignment to enterprise objectives. [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf) |
+| **Process‑Aware** | Business Process Mapping | Structures workflow context and evidence so agents operate within defined process boundaries. [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[1](https://ignite.microsoft.com/en-US/sessions/4320b648-ca6c-4056-8ac9-c0fc6068df03) |
+| **Platform‑Based** | Technology & Data Foundation | Tracks platform choices and references to support scalable, enterprise-approved deployment foundations. [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf) |
+| **People‑Ready** | Organizational Readiness & Culture | Encourages adoption planning and readiness artifacts that build trust and enable responsible rollout. [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf) |
+| **Governed** | Security & Governance | Evidence-backed controls, accountability, and review cadence to support safe, compliant scaling. [2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)[1](https://ignite.microsoft.com/en-US/sessions/4320b648-ca6c-4056-8ac9-c0fc6068df03) |
+
+> **Why this matters:** The framework’s value is in connecting **strategy readiness** (strategy + process) with **execution readiness** (technology/data + culture + governance), and Agent Registry is built to make that connection explicit through evidence and lifecycle controls. [3](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf)[2](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)
+
+
+
+---
+
+## What you can do with Agent Registry
+
+### ✅ Central AI Agent Registry
+- Browse a registry of agents with **search** and **filters** (e.g., **All Statuses**, **All Platforms**).
+- View agents as cards with key metadata and status (examples visible in the UI):
+  - **Employee Self Service Agent** (In Review)
+  - **Contoso C2P Agent** (Approved)
+  - **Finance Analyzer** (Rejected)
+  - **Marketing Guru** (Retired)
+  - **HR Helper** (In Review)
+  - **Support Copilot** (Draft)
+
+### ✅ Register & Maintain Agent Records
+- Register a new agent with **Basic Information**:
+  - *Agent Name*
+  - *AI Platform* (e.g., “Copilot Studio” is shown in an example)
+  - *Autonomy Tier*
+  - *Description*
+  - *Platform Reference*
+- Assign **Ownership & Governance** fields:
+  - *Executive Sponsor*
+  - *Business Owner*
+  - *Technical Owner*
+  - *Business Unit*
+- Maintain a **review schedule** with a **Next Review Date**.
+
+### ✅ Five-Pillar Readiness Model (Evidence-Based)
+Agent readiness is tracked across five pillars (visible in the UI):
+
+1. **Strategy‑Led** — aligned with business objectives and roadmap  
+2. **Process‑Aware** — using approved workflows and automation  
+3. **Platform‑Based** — built on approved enterprise platforms  
+4. **People‑Ready** — training, change management, and adoption plans  
+5. **Governed** — security, compliance, and monitoring frameworks  
+
+Each pillar can be supported by **evidence items**. Evidence includes:
+- Readiness pillar selection
+- Evidence status (e.g., **Meets** is visible)
+- Evidence title and description
+- A documentation link (“Link to SharePoint, Confluence, or external documentation” is visible)
+
+### ✅ Reporting Dashboard & Analytics
+A dedicated **Reporting Dashboard** provides visual analytics such as:
+- KPI tiles (examples shown): **Total Agents**, **Approved**, **Total Evidence**, **Avg Pillar Coverage**
+- **Agent Status Distribution** chart (Draft / In Review / Approved / Rejected / Retired)
+- **Pillar Readiness Overview** chart
+- An “Agents Pillar Status” table showing pillar status per agent
+
+### ✅ Users, Roles & Access
+The product includes a **Users & Roles** area to manage access and permissions, including roles shown in the UI:
+- **Agent Owner**
+- **Repository Admin**
+- **Portfolio Manager**
+- **CoE Reviewer**
+- **Consumer**
+
+---
+
+## Typical workflow (as shown in the UI)
+
+1. **Register a new agent** (Basic Information + Ownership & Governance).
+2. Provide **evidence** for readiness pillars.
+3. Track readiness in the agent details view (readiness score and per‑pillar status are visible).
+4. Use **Reporting** to monitor adoption and governance coverage.
+5. Manage **Users, Roles**, and **Business Units** for consistent oversight.
+
+---
+
+## Screenshots
+
+> Place screenshots in `docs/screenshots/` and update filenames below as needed.
+
+- **AI Agent Central (home)**
+  ![AI Agent Central](docs/screenshots/ai-agent-central.png)
+
+- **Agent Registry (list)**
+  ![Agent Registry](docs/screenshots/agent-registry.png)
+
+- **Register New Agent**
+  ![Register New Agent](docs/screenshots/register-new-agent.png)
+
+- **Edit Agent**
+  ![Edit Agent](docs/screenshots/edit-agent.png)
+
+- **Readiness & Pillar Details**
+  ![Readiness Details](docs/screenshots/readiness-details.png)
+
+- **Edit Evidence (modal)**
+  ![Edit Evidence](docs/screenshots/edit-evidence.png)
+
+- **Reporting Dashboard**
+  ![Reporting Dashboard](docs/screenshots/reporting-dashboard.png)
+
+- **Users & Roles**
+  ![Users & Roles](docs/screenshots/users-and-roles.png)
+
+- **Business Units**
+  ![Business Units](docs/screenshots/business-units.png)
+
+---
+
+## Repository structure (recommended)
