@@ -90,13 +90,12 @@ The product includes a **Users & Roles** area to manage access and permissions, 
 
 ---
 
-## Typical workflow (as shown in the UI)
+## Typical workflow
 
 1. **Register a new agent** (Basic Information + Ownership & Governance).
 2. Provide **evidence** for readiness pillars.
 3. Track readiness in the agent details view (readiness score and per‑pillar status are visible).
 4. Use **Reporting** to monitor adoption and governance coverage.
-5. Manage **Users, Roles**, and **Business Units** for consistent oversight.
 
 ---
 
