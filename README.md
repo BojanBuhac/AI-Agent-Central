@@ -110,6 +110,9 @@ The product includes a **Users & Roles** area to manage access and permissions, 
 - **Register New Agent**
   ![screenshot](images/register-new-agent.png)
 
+- **Agent Details**
+  ![screenshot](images/agent-details.png)
+
 - **Edit Agent**
   ![screenshot](images/edit-agent.png)
 
