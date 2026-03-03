@@ -76,16 +76,6 @@ A dedicated **Reporting Dashboard** provides visual analytics such as:
 - **Pillar Readiness Overview** chart
 - An “Agents Pillar Status” table showing pillar status per agent
 
-### ✅ Users, Roles & Access
-The product includes a **Users & Roles** area to manage access and permissions, including roles shown in the UI:
-- **Agent Owner**
-- **Repository Admin**
-- **Portfolio Manager**
-- **CoE Reviewer**
-- **Consumer**
-
----
-
 ## Typical workflow
 
 1. **Register a new agent** (Basic Information + Ownership & Governance).
