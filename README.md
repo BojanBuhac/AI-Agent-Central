@@ -95,27 +95,27 @@ A dedicated **Reporting Dashboard** provides visual analytics such as:
 
 ## Screenshots
 
-- **AI Agent Central (home)**
+### AI Agent Central (home)
   ![screenshot](images/ai-agent-central.png)
 
-- **Agent Registry (list)**
+### Agent Registry (list)
   ![screenshot](images/agent-registry.png)
 
-- **Register New Agent**
+### Register New Agent
   ![screenshot](images/register-new-agent.png)
 
-- **Agent Details**
+### Agent Details
   ![screenshot](images/agent-details.png)
 
-- **Readiness & Pillar Details**
+### Readiness & Pillar Details
   ![screenshot](images/readiness-details.png)
 
-- **Edit Evidence (modal)**
+### Edit Evidence (modal)
   ![screenshot](images/edit-evidence.png)
 
-- **Reporting Dashboard**
+### Reporting Dashboard
  ![screenshot](images/reporting-dashboard.png)
 
-- **Business Units**
+### Business Units
  ![screenshot](images/business-units.png)
 
