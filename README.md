@@ -91,7 +91,7 @@ A dedicated **Reporting Dashboard** provides visual analytics such as:
 ## Deployment
 1. Navigate to https://make.preview.powerapps.com
 2. Click Solutions and select Import solution from command bar
-3. Select AIAgentsGovernanceHuB_1_x_x_x_managed.zip and follow the import Solution process 
+3. Select AIAgentsGovernanceHuB_1_x_x_x.zip and follow the import Solution process 
 
 ## Screenshots
 
