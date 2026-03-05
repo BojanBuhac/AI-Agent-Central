@@ -107,9 +107,6 @@ A dedicated **Reporting Dashboard** provides visual analytics such as:
 - **Agent Details**
   ![screenshot](images/agent-details.png)
 
-- **Edit Agent**
-  ![screenshot](images/edit-agent.png)
-
 - **Readiness & Pillar Details**
   ![screenshot](images/readiness-details.png)
 
@@ -118,9 +115,6 @@ A dedicated **Reporting Dashboard** provides visual analytics such as:
 
 - **Reporting Dashboard**
  ![screenshot](images/reporting-dashboard.png)
-
-- **Users & Roles**
-  ![screenshot](images/users-and-roles.png)
 
 - **Business Units**
  ![screenshot](images/business-units.png)
