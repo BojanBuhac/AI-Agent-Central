@@ -61,7 +61,7 @@ Agent readiness is tracked across five pillars:
 2. **Process‑Aware** - using approved workflows and automation  
 3. **Platform‑Based** - built on approved enterprise platforms  
 4. **People‑Ready** - training, change management, and adoption plans  
-5. **Governed** — security, compliance, and monitoring frameworks  
+5. **Governed** - security, compliance, and monitoring frameworks  
 
 Each pillar can be supported by **evidence items**. Evidence includes:
 - Readiness pillar selection
