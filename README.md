@@ -36,7 +36,7 @@ Agent Registry implements these as **five operational readiness pillars** used t
 
 ### ✅ Central AI Agent Registry
 - Browse a registry of agents with **search** and **filters** (e.g., **All Statuses**, **All Platforms**).
-- View agents as cards with key metadata and status (examples visible in the UI):
+- View agents as cards with key metadata and status:
   - **Employee Self Service Agent** (In Review)
   - **Contoso C2P Agent** (Approved)
   - **Finance Analyzer** (Rejected)
@@ -53,6 +53,8 @@ Agent Registry implements these as **five operational readiness pillars** used t
   - *Platform Reference*
 - Assign **Ownership & Governance** fields
 - Maintain a **review schedule** with a **Next Review Date**.
+
+### ✅ Check for upcoming review dates via calendar
 
 ### ✅ Five-Pillar Readiness Model (Evidence-Based)
 Agent readiness is tracked across five pillars:
@@ -102,7 +104,7 @@ A dedicated **Reporting Dashboard** provides visual analytics such as:
   ![screenshot](images/agent-registry.png)
 
 ### Agent review calendar
-  ![screenshot](images/review-calendar.png)
+  ![screenshot](images/review-calendars.png)
   
 ### Agent Details - General
   ![screenshot](images/Agent-details-General.png)
