@@ -101,11 +101,17 @@ A dedicated **Reporting Dashboard** provides visual analytics such as:
 ### Agent Registry (list)
   ![screenshot](images/agent-registry.png)
 
-### Register New Agent
-  ![screenshot](images/register-new-agent.png)
+### Agent review calendar
+  ![screenshot](images/review-calendar.png)
+  
+### Agent Details - General
+  ![screenshot](images/Agent-details-General.png)
 
-### Agent Details
-  ![screenshot](images/agent-details.png)
+### Agent Details - Compliance
+  ![screenshot](images/Agent-details-compliance.png)
+
+### Agent Details - Skills
+  ![screenshot](images/Agent-details-skill.png)
 
 ### Readiness & Pillar Details
   ![screenshot](images/readiness-details.png)
