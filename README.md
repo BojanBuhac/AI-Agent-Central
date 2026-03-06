@@ -104,7 +104,7 @@ A dedicated **Reporting Dashboard** provides visual analytics such as:
   ![screenshot](images/agent-registry.png)
 
 ### Agent review calendar
-  ![screenshot](images/review-calendars.png)
+  ![screenshot](images/review-calendar.png)
   
 ### Agent Details - General
   ![screenshot](images/Agent-details-General.png)
