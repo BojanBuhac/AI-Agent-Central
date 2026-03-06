@@ -6,7 +6,7 @@ This framework was featured at **Microsoft Ignite 2025** as practical guidance t
 
 ![screenshot](images/agent-details.png)
 
-## Agent readines framework origins
+## Agent readiness framework origins
 To assess organizational readiness for designing, developing, deploying, and scaling agentic AI solutions, Microsoft surveyed 500 decision-makers and influencers across 13 countries and 16 industries.
 
 ![screenshot](images/pillar-methodology.png)
