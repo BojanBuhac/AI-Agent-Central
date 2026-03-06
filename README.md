@@ -107,10 +107,10 @@ A dedicated **Reporting Dashboard** provides visual analytics such as:
 
 ## Screenshots
 
-### AI Agent Central (home)
+### AI Agent Central
   ![screenshot](images/ai-agent-central.png)
 
-### Agent Registry (list)
+### Agent Registry
   ![screenshot](images/agent-registry.png)
 
 ### Agent review calendar
@@ -128,7 +128,7 @@ A dedicated **Reporting Dashboard** provides visual analytics such as:
 ### Readiness & Pillar Details
   ![screenshot](images/readiness-details.png)
 
-### Edit Evidence (modal)
+### Edit Evidence
   ![screenshot](images/edit-evidence.png)
 
 ### Reporting Dashboard
