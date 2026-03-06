@@ -1,21 +1,22 @@
 # AI Agent Central - Enterprise AI Governance
+> [!NOTE]
 > Built on Microsoft’s Agent Readiness Framework
 
 Microsoft defines agent readiness as an organization’s ability to **design, deploy, and integrate AI agents effectively and at scale relative to enterprise objectives**, and frames readiness as an integration of **strategic vision and operational execution** across **five pillars**.
 This framework was featured at **Microsoft Ignite 2025** as practical guidance to help organizations assess and accelerate readiness for agents at scale.
 
 ![screenshot](images/agent-details.png)
-
-## Agent readiness framework origins
-To assess organizational readiness for designing, developing, deploying, and scaling agentic AI solutions, Microsoft surveyed 500 decision-makers and influencers across 13 countries and 16 industries.
-
-![screenshot](images/pillar-methodology.png)
-
-The sample includes organizations with 1,000 to 100,000+ employees and $1 billion to $50 billion+ annual revenue. Geographically, the study covered North America (40%), Europe (40%), and Asia Pacific and Emerging Markets (20%). All participating organizations reported familiarity with AI and had begun implementing foundational strategies and tools to support enterprise-scale adoption. Survey respondents answered 25 questions, each mapping to the five agentic pillars. Scores were aggregated and weighted to create a **Strategy Readiness** score (Business and AI Strategy Alignment, Business Process Mapping) and **Execution Readiness** score (Technology and Data Foundation, Organizational Readiness and Culture, Governance & Protections), which together produced an **Overall Agent Readiness Score**.
-
-[The Agent Readiness Framework: Pillars & Practices](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)
- 
-[Agent Readiness Framework](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf)  
+> [!NOTE]
+> ### Agent readiness framework origins
+> To assess organizational readiness for designing, developing, deploying, and scaling agentic AI solutions, Microsoft surveyed 500 decision-makers and influencers across 13 countries and 16 industries.
+> 
+> ![screenshot](images/pillar-methodology.png)
+> 
+> The sample includes organizations with 1,000 to 100,000+ employees and $1 billion to $50 billion+ annual revenue. Geographically, the study covered North America (40%), Europe (40%), and Asia Pacific and Emerging Markets (20%). All participating organizations reported familiarity with AI and had begun implementing foundational strategies and tools to support enterprise-scale adoption. Survey respondents answered 25 questions, each mapping to the five agentic pillars. Scores were aggregated and weighted to create a **Strategy Readiness** score (Business and AI Strategy Alignment, Business Process Mapping) and **Execution Readiness** score (Technology and Data Foundation, Organizational Readiness and Culture, Governance & Protections), which together produced an **Overall Agent Readiness Score**.
+> 
+> [The Agent Readiness Framework: Pillars & Practices](https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original)
+>  
+> [Agent Readiness Framework](https://adoption.microsoft.com/files/agents/AgenticReadinessFrameworkOverview.pdf)  
 
 ### Five pillars (framework → product implementation)
 
