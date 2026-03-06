@@ -100,9 +100,10 @@ A dedicated **Reporting Dashboard** provides visual analytics such as:
 2. Administrative privileges in specific environment
 
 ## Deployment
-1. Navigate to https://make.preview.powerapps.com
-2. Click Solutions and select Import solution from command bar
-3. Select AIAgentsGovernanceHuB_1_x_x_x.zip and follow the import Solution process 
+1. Download [AI Agent Central - Solution App](https://github.com/BojanBuhac/AI-Agent-Central/blob/main/AIAgentsGovernanceHuB_1_0_0_4.zip)
+2. Navigate to https://make.preview.powerapps.com
+3. Click Solutions and select Import solution from command bar
+4. Select AIAgentsGovernanceHuB_1_x_x_x.zip and follow the import Solution process 
 
 ## Screenshots
 
