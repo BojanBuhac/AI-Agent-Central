@@ -128,6 +128,9 @@ A dedicated **Reporting Dashboard** provides visual analytics such as:
 ### Agent Details - Skills
   ![screenshot](images/Agent-details-skill.png)
 
+### Agent icon - :)
+  ![screenshot](images/agent-icon.png)
+
 ### Readiness & Pillar Details
   ![screenshot](images/readiness-details.png)
 
