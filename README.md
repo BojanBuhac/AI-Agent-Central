@@ -103,7 +103,10 @@ A dedicated **Reporting Dashboard** provides visual analytics such as:
 1. Download [AI Agent Central - Solution App](https://github.com/BojanBuhac/AI-Agent-Central/blob/main/AIAgentsGovernanceHuB_1_0_0_4.zip)
 2. Navigate to https://make.preview.powerapps.com
 3. Click Solutions and select Import solution from command bar
-4. Select AIAgentsGovernanceHuB_1_x_x_x.zip and follow the import Solution process 
+4. Select AIAgentsGovernanceHuB_1_x_x_x.zip and follow the import Solution process
+5. Publish solution artifacts - **https://make.preview.powerapps.com/environments/environment_GUID/solutions/**
+6. Share App with users - **https://make.preview.powerapps.com/environments/environment_GUID/apps/** > click Share button on toolbar
+   ![screenshot](images/share-app.png)
 
 ## Screenshots
 
