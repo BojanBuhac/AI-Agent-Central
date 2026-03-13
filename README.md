@@ -1,6 +1,8 @@
 # AI Agent Central - Enterprise AI Governance
 > [!NOTE]
 > Built on Microsoft’s Agent Readiness Framework
+>
+> Ver 1.0.0.13 updated with AI Goals and KPIs for Agents
 
 Microsoft defines agent readiness as an organization’s ability to **design, deploy, and integrate AI agents effectively and at scale relative to enterprise objectives**, and frames readiness as an integration of **strategic vision and operational execution** across **five pillars**.
 This framework was featured at **Microsoft Ignite 2025** as practical guidance to help organizations assess and accelerate readiness for agents at scale.
