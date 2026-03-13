@@ -43,6 +43,11 @@ Agent Registry implements these as **five operational readiness pillars** used t
 
 ## What you can do with Agent Registry
 
+### ✅ Manager Goals and KPIs
+- Manage AI Goals
+- Manage KPIs
+- Connect them to Agents
+
 ### ✅ Central AI Agent Registry
 - Browse a registry of agents with **search** and **filters** (e.g., **All Statuses**, **All Platforms**).
 - View agents as cards with key metadata and status:
@@ -113,14 +118,17 @@ A dedicated **Reporting Dashboard** provides visual analytics such as:
 ### AI Agent Central
   ![screenshot](images/ai-agent-central.png)
 
-### Agent Registry
-  ![screenshot](images/agent-registry.png)
+### AI Goals
+  ![screenshot](images/Ai-Goals.png)
 
 ### Agent review calendar
   ![screenshot](images/review-calendar.png)
   
 ### Agent Details - General
   ![screenshot](images/Agent-details-General.png)
+
+### Agent Details - KPIs
+  ![screenshot](images/Agent-details-KPI.png)
 
 ### Agent Details - Compliance
   ![screenshot](images/Agent-details-compliance.png)
