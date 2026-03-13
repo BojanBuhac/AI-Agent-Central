@@ -43,7 +43,7 @@ Agent Registry implements these as **five operational readiness pillars** used t
 
 ## What you can do with Agent Registry
 
-### ✅ Manager Goals and KPIs
+### ✅ Manage AI Goals and KPIs
 - Manage AI Goals
 - Manage KPIs
 - Connect them to Agents
