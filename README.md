@@ -118,7 +118,7 @@ A dedicated **Reporting Dashboard** provides visual analytics such as:
 ### AI Agent Central
   ![screenshot](images/ai-agent-central.png)
 
-### AI Goals
+### AI Goals and KPIs
   ![screenshot](images/Ai-Goals.png)
 
 ### Agent review calendar
