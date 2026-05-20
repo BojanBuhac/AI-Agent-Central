@@ -143,20 +143,119 @@
     background:linear-gradient(135deg, rgba(91,108,255,.3), rgba(0,194,168,.3));
     z-index:-1;filter:blur(20px);opacity:.35;
   }
-  .hero-visual img{
+  .hero-screens{
+    position:relative;
+    aspect-ratio: 16/10;
     border-radius:14px;
+    overflow:hidden;
     box-shadow:0 16px 40px rgba(30,42,80,.18);
     border:1px solid rgba(255,255,255,.8);
+    background:#fff;
   }
+  .hero-screen{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:top left;
+    opacity:0;transform:scale(1.02);
+    transition:opacity .6s ease, transform .8s ease;
+    pointer-events:none;
+  }
+  .hero-screen.active{opacity:1;transform:scale(1);pointer-events:auto}
   .floaty{
     position:absolute;background:#fff;border-radius:14px;padding:12px 16px;
     box-shadow:var(--shadow-md);display:flex;align-items:center;gap:10px;
-    border:1px solid var(--border);font-size:13px;
+    border:1px solid var(--border);font-size:13px;font-weight:500;
+    z-index:2;
+    transition:opacity .35s ease, transform .35s ease;
   }
-  .floaty .dot{width:8px;height:8px;border-radius:50%}
+  .floaty .dot{width:8px;height:8px;border-radius:50%;transition:background .35s ease;box-shadow:0 0 0 3px rgba(0,0,0,.04)}
   .floaty-1{top:24px;left:-20px;animation:float 6s ease-in-out infinite}
   .floaty-2{bottom:28px;right:-22px;animation:float 7s ease-in-out infinite reverse}
+  .floaty.swap{opacity:0;transform:translateY(-6px)}
   @keyframes float{50%{transform:translateY(-10px)}}
+  @media (max-width: 980px){
+    .floaty-1{left:8px}
+    .floaty-2{right:8px}
+  }
+
+  /* ===== FRAMEWORK BANNER ===== */
+  .framework-section{
+    max-width:1280px;margin:0 auto;
+    padding:20px 28px 0;
+  }
+  .framework-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-xl);
+    padding:48px;
+    display:grid;grid-template-columns:1.15fr 1fr;gap:50px;align-items:center;
+    box-shadow:var(--shadow-md);
+    position:relative;overflow:hidden;
+  }
+  .framework-card::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(500px 280px at 100% 0%, rgba(91,108,255,.07), transparent 60%),
+      radial-gradient(400px 240px at 0% 100%, rgba(0,194,168,.06), transparent 60%);
+    pointer-events:none;
+  }
+  .framework-left{position:relative;z-index:1}
+  .framework-badge{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:8px 14px;border-radius:999px;
+    background:var(--bg-soft);
+    border:1px solid var(--border);
+    font-size:12.5px;font-weight:600;color:var(--text-soft);
+    letter-spacing:.01em;
+    margin-bottom:18px;
+  }
+  .ms-logo{
+    display:inline-grid;grid-template-columns:1fr 1fr;gap:2px;
+    width:16px;height:16px;
+  }
+  .ms-logo span{display:block;border-radius:1px}
+  .framework-title{
+    font-size:clamp(26px, 3vw, 36px);
+    font-weight:700;letter-spacing:-.02em;line-height:1.15;
+    margin-bottom:14px;
+  }
+  .framework-lead{color:var(--text-soft);font-size:16px;margin-bottom:24px;max-width:560px}
+  .framework-cta{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:13px 22px;border-radius:12px;
+    background:var(--gradient-1);color:#fff;
+    font-weight:600;font-size:14.5px;
+    box-shadow:0 10px 26px rgba(91,108,255,.35);
+    transition:transform .15s ease, box-shadow .2s ease;
+  }
+  .framework-cta:hover{transform:translateY(-1px);box-shadow:0 14px 32px rgba(91,108,255,.45)}
+  .framework-cta span{font-size:16px;transition:transform .2s ease}
+  .framework-cta:hover span{transform:translate(2px,-2px)}
+
+  .framework-pillars{
+    display:flex;flex-direction:column;gap:10px;
+    position:relative;z-index:1;
+  }
+  .pillar-chip{
+    display:flex;align-items:center;gap:14px;
+    padding:14px 18px;
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    border-radius:14px;
+    transition:.2s ease;
+  }
+  .pillar-chip:hover{border-color:var(--brand);transform:translateX(4px);box-shadow:var(--shadow-sm)}
+  .pillar-num{
+    font-size:13px;font-weight:700;letter-spacing:.05em;
+    background:var(--gradient-1);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    flex-shrink:0;min-width:24px;
+  }
+  .pillar-name{font-size:15px;font-weight:600;letter-spacing:-.01em}
+  .pillar-desc{font-size:13px;color:var(--text-mute);margin-top:1px}
+
+  @media (max-width: 980px){
+    .framework-card{grid-template-columns:1fr;padding:32px;gap:30px}
+  }
 
   /* ===== SECTIONS ===== */
   section{padding:80px 28px;max-width:1280px;margin:0 auto}
@@ -172,7 +271,7 @@
   }
   .section-lead{color:var(--text-soft);font-size:17px}
 
-  /* ====== FEATURES GRID ====== */
+  /* ===== FEATURES GRID ===== */
   .features{display:grid;grid-template-columns:repeat(3, 1fr);gap:20px}
   .feature{
     background:var(--surface);
@@ -407,7 +506,6 @@
       <a href="#modules">Modules</a>
       <a href="#gallery">Gallery</a>
       <a href="#settings">Settings</a>
-      <a href="#cta" class="btn btn-primary">Get Started →</a>
     </div>
   </div>
 </nav>
@@ -415,17 +513,13 @@
 <!-- HERO -->
 <header class="hero">
   <div>
-    <span class="pill"><span class="pill-dot"></span> Enterprise AI Governance Hub</span>
+    <span class="pill"><span class="pill-dot"></span> Aligned with Microsoft Agent Readiness Framework</span>
     <h1 class="title">Register, validate, and govern your <span class="grad">AI agents</span> at enterprise scale.</h1>
-    <p class="lead">A unified command center for AI Agent lifecycle management — from intake and assessment through deployment, adoption, and continuous improvement.</p>
+    <p class="lead">A unified command center for AI Agent lifecycle management — from intake and assessment through deployment, adoption, and continuous improvement — built on Microsoft's Agent Readiness Framework.</p>
     <div class="hero-actions">
       <a href="#features" class="btn btn-primary">Explore Features →</a>
     </div>
     <div class="meta-row">
-      <div>
-        <div class="meta-num">27</div>
-        <div class="meta-label">Registered Agents</div>
-      </div>
       <div>
         <div class="meta-num">5</div>
         <div class="meta-label">Readiness Pillars</div>
@@ -437,11 +531,54 @@
     </div>
   </div>
   <div class="hero-visual">
-    <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/01-Dashboard.png?raw=true" alt="AI Agent Central Dashboard" />
-    <div class="floaty floaty-1"><span class="dot" style="background:#00c2a8"></span> Production Ready</div>
-    <div class="floaty floaty-2"><span class="dot" style="background:#5b6cff"></span> 16 Approved Agents</div>
+    <div class="hero-screens" id="heroScreens">
+      <img class="hero-screen active" data-key="dashboard" src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/01-Dashboard.png?raw=true" alt="Dashboard" />
+      <img class="hero-screen" data-key="catalog" src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/02-Catalog.png?raw=true" alt="Agent Catalog" />
+      <img class="hero-screen" data-key="activities" src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/05-ActivitiesKanban.png?raw=true" alt="Activities" />
+      <img class="hero-screen" data-key="goals" src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/08-Goals.png?raw=true" alt="AI Goals" />
+      <img class="hero-screen" data-key="reporting" src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/15-ReportingGeneral.png?raw=true" alt="Reporting" />
+      <img class="hero-screen" data-key="idea" src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/19-IDEAHome.png?raw=true" alt="IDEA Hub" />
+    </div>
+    <div class="floaty floaty-1" id="floatyTop">
+      <span class="dot" id="floatyDotTop" style="background:#00c2a8"></span>
+      <span id="floatyTextTop">Live Dashboard</span>
+    </div>
+    <div class="floaty floaty-2" id="floatyBot">
+      <span class="dot" id="floatyDotBot" style="background:#5b6cff"></span>
+      <span id="floatyTextBot">16 Approved Agents</span>
+    </div>
   </div>
 </header>
+
+<!-- MICROSOFT FRAMEWORK BANNER -->
+<section class="framework-section">
+  <div class="framework-card">
+    <div class="framework-left">
+      <span class="framework-badge">
+        <span class="ms-logo" aria-hidden="true">
+          <span style="background:#f25022"></span>
+          <span style="background:#7fba00"></span>
+          <span style="background:#00a4ef"></span>
+          <span style="background:#ffb900"></span>
+        </span>
+        Built on the Microsoft Agent Readiness Framework
+      </span>
+      <h2 class="framework-title">Enterprise-grade readiness, by design.</h2>
+      <p class="framework-lead">Every assessment, scorecard, and governance workflow in AI Agent Central is mapped directly to Microsoft's five-pillar Agent Readiness Framework — so your evaluations stay aligned with the industry standard for safe, scalable, and value-driven AI adoption.</p>
+      <a class="framework-cta" href="https://marketingassets.microsoft.com/gdc/gdcwrwKVr/original" target="_blank" rel="noopener noreferrer">
+        Read the Microsoft Agent Readiness Framework
+        <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <div class="framework-pillars">
+      <div class="pillar-chip"><span class="pillar-num">01</span><div><div class="pillar-name">Strategy</div><div class="pillar-desc">Vision &amp; roadmap alignment</div></div></div>
+      <div class="pillar-chip"><span class="pillar-num">02</span><div><div class="pillar-name">Process</div><div class="pillar-desc">Workflow &amp; operations fit</div></div></div>
+      <div class="pillar-chip"><span class="pillar-num">03</span><div><div class="pillar-name">Platform</div><div class="pillar-desc">Technology &amp; data foundation</div></div></div>
+      <div class="pillar-chip"><span class="pillar-num">04</span><div><div class="pillar-name">People</div><div class="pillar-desc">Skills &amp; change readiness</div></div></div>
+      <div class="pillar-chip"><span class="pillar-num">05</span><div><div class="pillar-name">Governed</div><div class="pillar-desc">Security, compliance &amp; trust</div></div></div>
+    </div>
+  </div>
+</section>
 
 <!-- FEATURES -->
 <section id="features">
@@ -785,6 +922,36 @@
 </div>
 
 <script>
+// Hero screen rotator
+(function(){
+  const screens = document.querySelectorAll('.hero-screen');
+  const pills = document.querySelectorAll('.hero-pill');
+  if(!screens.length || !pills.length) return;
+
+  let current = 0;
+  let timer = null;
+  const INTERVAL = 4500;
+
+  function show(i){
+    screens.forEach((el, idx) => el.classList.toggle('active', idx === i));
+    pills.forEach((el, idx) => el.classList.toggle('active', idx === i));
+    current = i;
+  }
+  function next(){ show((current + 1) % screens.length); }
+  function start(){ stop(); timer = setInterval(next, INTERVAL); }
+  function stop(){ if(timer){ clearInterval(timer); timer = null; } }
+
+  pills.forEach((pill, i) => {
+    pill.addEventListener('click', () => { show(i); start(); });
+  });
+
+  const wrap = document.getElementById('heroScreens');
+  wrap.addEventListener('mouseenter', stop);
+  wrap.addEventListener('mouseleave', start);
+
+  start();
+})();
+
 (function(){
   const cards = Array.from(document.querySelectorAll('.gallery-card'));
   if(!cards.length) return;
