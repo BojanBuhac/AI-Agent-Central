@@ -241,6 +241,69 @@
   .gallery-meta h4{font-size:14.5px;font-weight:600}
   .gallery-meta span{font-size:12px;color:var(--text-mute);background:var(--bg-soft);padding:3px 9px;border-radius:6px}
 
+  /* ===== LIGHTBOX ===== */
+  .lightbox{
+    position:fixed;inset:0;z-index:1000;
+    background:rgba(15,20,35,.78);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;pointer-events:none;
+    transition:opacity .25s ease;
+    padding:40px;
+  }
+  .lightbox.open{opacity:1;pointer-events:auto}
+  .lightbox-stage{
+    position:relative;max-width:min(1200px, 92vw);max-height:88vh;
+    display:flex;flex-direction:column;align-items:center;gap:16px;
+  }
+  .lightbox-img{
+    max-width:100%;max-height:80vh;
+    border-radius:14px;
+    box-shadow:0 30px 80px rgba(0,0,0,.4);
+    background:#fff;
+    transform:scale(.96);opacity:0;
+    transition:transform .3s ease, opacity .25s ease;
+  }
+  .lightbox.open .lightbox-img{transform:scale(1);opacity:1}
+  .lightbox-caption{
+    color:#fff;font-size:14.5px;font-weight:500;
+    background:rgba(255,255,255,.12);
+    padding:8px 16px;border-radius:999px;
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.15);
+  }
+  .lightbox-btn{
+    position:absolute;
+    width:48px;height:48px;border-radius:50%;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.2);
+    color:#fff;cursor:pointer;
+    display:grid;place-items:center;
+    font-size:22px;line-height:1;
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    transition:background .2s ease, transform .15s ease;
+    z-index:2;
+  }
+  .lightbox-btn:hover{background:rgba(255,255,255,.25);transform:scale(1.06)}
+  .lightbox-close{top:-58px;right:0;font-size:18px}
+  .lightbox-prev{left:-72px;top:50%;transform:translateY(-50%)}
+  .lightbox-next{right:-72px;top:50%;transform:translateY(-50%)}
+  .lightbox-prev:hover, .lightbox-next:hover{transform:translateY(-50%) scale(1.06)}
+  .lightbox-counter{
+    position:absolute;top:-58px;left:0;
+    color:rgba(255,255,255,.75);font-size:13px;font-weight:500;
+    letter-spacing:.05em;
+  }
+  body.lightbox-locked{overflow:hidden}
+
+  @media (max-width: 780px){
+    .lightbox{padding:20px}
+    .lightbox-prev{left:8px;background:rgba(0,0,0,.45)}
+    .lightbox-next{right:8px;background:rgba(0,0,0,.45)}
+    .lightbox-close{top:-50px;right:0}
+    .lightbox-counter{top:-50px;left:0}
+  }
+
   /* ===== MODULE TABS ===== */
   .modules{display:flex;flex-direction:column;gap:16px}
   .module-row{
@@ -694,7 +757,6 @@
   <div class="cta">
     <h2>Ready to govern your AI agents with confidence?</h2>
     <p>Bring transparency, structure, and accountability to your AI portfolio — with the platform built for the enterprise.</p>
-    <a href="#" class="btn">Book a Demo →</a>
   </div>
 </section>
 
@@ -709,6 +771,97 @@
     </div>
   </div>
 </footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+  <div class="lightbox-stage">
+    <div class="lightbox-counter" id="lbCounter">1 / 1</div>
+    <button class="lightbox-btn lightbox-close" id="lbClose" aria-label="Close preview">✕</button>
+    <button class="lightbox-btn lightbox-prev" id="lbPrev" aria-label="Previous image">‹</button>
+    <button class="lightbox-btn lightbox-next" id="lbNext" aria-label="Next image">›</button>
+    <img class="lightbox-img" id="lbImg" src="" alt="" />
+    <div class="lightbox-caption" id="lbCaption"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const cards = Array.from(document.querySelectorAll('.gallery-card'));
+  if(!cards.length) return;
+
+  const items = cards.map(card => {
+    const img = card.querySelector('img');
+    const meta = card.querySelector('.gallery-meta h4');
+    const tag = card.querySelector('.gallery-meta span');
+    return {
+      src: img.src,
+      alt: img.alt || '',
+      title: meta ? meta.textContent.trim() : '',
+      tag: tag ? tag.textContent.trim() : ''
+    };
+  });
+
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCaption = document.getElementById('lbCaption');
+  const lbCounter = document.getElementById('lbCounter');
+  const btnClose = document.getElementById('lbClose');
+  const btnPrev = document.getElementById('lbPrev');
+  const btnNext = document.getElementById('lbNext');
+
+  let idx = 0;
+
+  function render(){
+    const it = items[idx];
+    lbImg.src = it.src;
+    lbImg.alt = it.alt;
+    lbCaption.textContent = it.tag ? `${it.title} · ${it.tag}` : it.title;
+    lbCounter.textContent = `${idx + 1} / ${items.length}`;
+  }
+
+  function open(i){
+    idx = i;
+    render();
+    lb.classList.add('open');
+    document.body.classList.add('lightbox-locked');
+  }
+  function close(){
+    lb.classList.remove('open');
+    document.body.classList.remove('lightbox-locked');
+  }
+  function next(){ idx = (idx + 1) % items.length; render(); }
+  function prev(){ idx = (idx - 1 + items.length) % items.length; render(); }
+
+  cards.forEach((card, i) => {
+    card.addEventListener('click', () => open(i));
+  });
+
+  btnClose.addEventListener('click', close);
+  btnNext.addEventListener('click', e => { e.stopPropagation(); next(); });
+  btnPrev.addEventListener('click', e => { e.stopPropagation(); prev(); });
+
+  lb.addEventListener('click', e => {
+    if(e.target === lb) close();
+  });
+
+  document.addEventListener('keydown', e => {
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') close();
+    else if(e.key === 'ArrowRight') next();
+    else if(e.key === 'ArrowLeft') prev();
+  });
+
+  // Touch swipe
+  let touchX = null;
+  lb.addEventListener('touchstart', e => { touchX = e.changedTouches[0].clientX; }, {passive:true});
+  lb.addEventListener('touchend', e => {
+    if(touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if(Math.abs(dx) > 40){ dx < 0 ? next() : prev(); }
+    touchX = null;
+  }, {passive:true});
+})();
+</script>
 
 </body>
 </html>
