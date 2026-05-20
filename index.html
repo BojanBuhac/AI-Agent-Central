@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Central - Enterprise AI Governance</title>
+    <style>
+        :root {
+            --primary: #0078d4; /* PowerPlatform Blue */
+            --primary-dark: #005a9e;
+            --accent: #107c41; /* Excel Green / Success */
+            --dark: #201f1e;
+            --light: #f3f2f1;
+            --white: #ffffff;
+            --gray: #605e5c;
+            --border: #edebe9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .github-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background-color: var(--white);
+            transition: all 0.2s ease;
+        }
+
+        .github-link:hover {
+            background-color: var(--light);
+            border-color: var(--gray);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #001829 0%, #004b87 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--white);
+            color: var(--primary-dark);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--light);
+        }
+
+        /* Main Grid Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: var(--primary);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Value Pillars Grid */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.35rem;
+        }
+
+        .card p {
+            color: var(--gray);
+        }
+
+        /* Features Interactive Showcase */
+        .showcase-section {
+            background-color: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 3rem;
+            margin-bottom: 5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 2rem;
+            gap: 1rem;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray);
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary);
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-content.active {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .tab-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .tab-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .tab-text ul {
+            margin-top: 1rem;
+            margin-left: 1.25rem;
+        }
+
+        .tab-text li {
+            margin-bottom: 0.5rem;
+            color: var(--gray);
+        }
+
+        .tab-visual {
+            flex: 1;
+            min-width: 300px;
+            background: var(--light);
+            border: 2px dashed var(--gray);
+            border-radius: 6px;
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        /* Technical Context & Footer */
+        .tech-footer {
+            background-color: #111;
+            color: #999;
+            padding: 4rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .tech-footer p {
+            margin-bottom: 1rem;
+        }
+
+        .tech-tags {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            background-color: #222;
+            color: #ccc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            border: 1px solid #333;
+        }
+
+        .author-credit {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .author-credit:hover {
+            color: var(--primary);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .showcase-section { padding: 1.5rem; }
+            .tabs { overflow-x: auto; white-space: nowrap; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                AI Agent Central
+            </div>
+            <a href="https://github.com/BojanBuhac/AI-Agent-Central" target="_blank" class="github-link">
+                View Repository
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <span class="badge">PowerPlatform Solution</span>
+            <h1>AI Agent Lifecycle Governance</h1>
+            <p>Empower your organization's AI Council to seamlessly intake, review, and monitor AI agents from a unified control plane.</p>
+            <a href="https://github.com/BojanBuhac/AI-Agent-Central" target="_blank" class="btn btn-primary">Explore on GitHub</a>
+        </div>
+    </section>
+
+    <main class="main-content">
+        
+        <h2 class="section-title">Core Capability Framework</h2>
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-icon">📥</div>
+                <h3>Structured Intake</h3>
+                <p>Standardize how business units request and propose new AI agents. Capture technical requirements, compliance parameters, and intended business outcomes from day one.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📅</div>
+                <h3>Review Calendar</h3>
+                <p>Equip your governance and AI Council teams with built-in evaluation workflows and a dedicated timeline to systematically audit agents before deployment.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>Centralized Monitoring</h3>
+                <p>Maintain an active, comprehensive inventory of live solutions. Transition from fragmented oversight into strategic, data-driven alignment.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Solution Architecture</h2>
+        <div class="showcase-section">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab(event, 'intake')">AI Council Intake</button>
+                <button class="tab-btn" onclick="switchTab(event, 'calendar')">Review Calendar</button>
+                <button class="tab-btn" onclick="switchTab(event, 'reporting')">Oversight & Reporting</button>
+            </div>
+
+            <div id="intake" class="tab-content active">
+                <div class="tab-text">
+                    <h3>Streamlined Agent Onboarding</h3>
+                    <p>Enforce governance right at the starting line. Business units submit requests clarifying agentic roles, target systems, and access credentials.</p>
+                    <ul>
+                        <li>Eliminate shadow AI implementations.</li>
+                        <li>Standardize initial risk ratings.</li>
+                        <li>Validate dependencies prior to environmental execution.</li>
+                    </ul>
+                </div>
+                <div class="tab-visual">
+                    <span>[ PowerApp Intake Form Mockup ]</span>
+                    <small style="margin-top:0.5rem; color:#aaa;">Centralized data store via Microsoft Dataverse</small>
+                </div>
+            </div>
+
+            <div id="calendar" class="tab-content">
+                <div class="tab-text">
+                    <h3>Strategic Assessment Cadence</h3>
+                    <p>Provides your technical leads and enterprise compliance teams with a unified timeline interface to evaluate operational dependencies and safety boundaries.</p>
+                    <ul>
+                        <li>Track peer review cycles.</li>
+                        <li>Document explicit architectural sign-offs.</li>
+                        <li>Log compliance verification checkpoints.</li>
+                    </ul>
+                </div>
+                <div class="tab-visual">
+                    <span>[ Shared Governance Calendar Interface ]</span>
+                    <small style="margin-top:0.5rem; color:#aaa;">Schedule and track steering updates</small>
+                </div>
+            </div>
+
+            <div id="reporting" class="tab-content">
+                <div class="tab-text">
+                    <h3>Enterprise Fleet Status</h3>
+                    <p>Gain transparency over the active operational scope of agentic solutions processing data across different organization matrices.</p>
+                    <ul>
+                        <li>Correlate deployment footprint across teams.</li>
+                        <li>Track active version states and underlying dependencies.</li>
+                        <li>Verify ongoing operational alignment.</li>
+                    </ul>
+                </div>
+                <div class="tab-visual">
+                    <span>[ Analytical Monitoring View ]</span>
+                    <small style="margin-top:0.5rem; color:#aaa;">Operational overview metrics</small>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="tech-footer">
+        <p>A repository curated by <a href="https://github.com/BojanBuhac" target="_blank" class="author-credit">Bojan Buhac</a> (Senior Cloud Solution Architect at Microsoft).</p>
+        <p>Providing data-driven insights and structured governance playbooks to safely accelerate digital transformation.</p>
+        <div class="tech-tags">
+            <span class="tech-tag">PowerApps</span>
+            <span class="tech-tag">Copilot Studio</span>
+            <span class="tech-tag">Microsoft Dataverse</span>
+            <span class="tech-tag">AI Governance</span>
+            <span class="tech-tag">Power Platform</span>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(event, tabId) {
+            // Hide all contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            // Deactivate all buttons
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Activate target
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
