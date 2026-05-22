@@ -257,6 +257,87 @@
     .framework-card{grid-template-columns:1fr;padding:32px;gap:30px}
   }
 
+  /* ===== WHAT'S NEW (USER PRESENCE) ===== */
+  .whatsnew-section{
+    max-width:1280px;margin:0 auto;
+    padding:60px 28px 0;
+  }
+  .whatsnew-card{
+    background:linear-gradient(135deg, #f4ecff 0%, #eef0ff 50%, #e6fbf7 100%);
+    border:1px solid rgba(122,77,255,.15);
+    border-radius:var(--radius-xl);
+    padding:44px;
+    display:grid;grid-template-columns:1.05fr 1fr;gap:50px;align-items:center;
+    position:relative;overflow:hidden;
+    box-shadow:0 20px 50px rgba(122,77,255,.10);
+  }
+  .whatsnew-card::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(600px 320px at 0% 100%, rgba(91,108,255,.10), transparent 60%);
+    pointer-events:none;
+  }
+  .whatsnew-media{
+    position:relative;
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    box-shadow:var(--shadow-lg);
+    border:1px solid rgba(255,255,255,.8);
+    background:#fff;
+  }
+  .whatsnew-media img{width:100%;display:block}
+  .new-ribbon{
+    position:absolute;top:14px;left:14px;z-index:2;
+    background:linear-gradient(135deg,#7a4dff,#5b6cff);
+    color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em;
+    padding:6px 12px;border-radius:999px;
+    box-shadow:0 8px 20px rgba(122,77,255,.45);
+  }
+  .whatsnew-text{position:relative;z-index:1}
+  .whatsnew-text h3{
+    font-size:30px;font-weight:700;letter-spacing:-.02em;
+    line-height:1.15;margin:8px 0 14px;
+  }
+  .whatsnew-text p{color:var(--text-soft);font-size:16px;margin-bottom:18px}
+
+  .avatar-demo{
+    margin-top:26px;display:flex;align-items:center;gap:-6px;
+    background:rgba(255,255,255,.7);
+    border:1px solid rgba(255,255,255,.9);
+    backdrop-filter:blur(6px);
+    border-radius:999px;
+    padding:8px 18px 8px 8px;width:fit-content;
+    box-shadow:var(--shadow-sm);
+  }
+  .avatar{
+    width:36px;height:36px;border-radius:50%;
+    display:grid;place-items:center;
+    color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.02em;
+    border:2px solid #fff;
+    margin-left:-8px;
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+  }
+  .avatar:first-child{margin-left:0}
+  .avatar-count{
+    background:var(--bg-soft);color:var(--text-soft);font-size:11.5px;
+  }
+  .avatar-label{
+    display:inline-flex;align-items:center;gap:8px;
+    margin-left:14px;font-size:13.5px;font-weight:600;color:var(--text);
+  }
+  .live-dot{
+    width:8px;height:8px;border-radius:50%;background:#00c2a8;
+    box-shadow:0 0 0 4px rgba(0,194,168,.22);
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{box-shadow:0 0 0 4px rgba(0,194,168,.22)}
+    50%{box-shadow:0 0 0 8px rgba(0,194,168,.05)}
+  }
+
+  @media (max-width: 980px){
+    .whatsnew-card{grid-template-columns:1fr;padding:30px;gap:30px}
+  }
+
   /* ===== SECTIONS ===== */
   section{padding:80px 28px;max-width:1280px;margin:0 auto}
   .section-head{text-align:center;max-width:760px;margin:0 auto 56px}
@@ -580,6 +661,34 @@
   </div>
 </section>
 
+<!-- WHAT'S NEW — USER PRESENCE -->
+<section class="whatsnew-section">
+  <div class="whatsnew-card">
+    <div class="whatsnew-media">
+      <span class="new-ribbon">✨ Just Shipped</span>
+      <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/23-UserPresence.png?raw=true" alt="User Presence" />
+    </div>
+    <div class="whatsnew-text">
+      <span class="eyebrow" style="color:#7a4dff">New Feature</span>
+      <h3>User Presence — see who's working alongside you.</h3>
+      <p>Real-time presence indicators surface every teammate currently active in AI Agent Central. Hover the avatar stack to see who's online, what they're viewing, and reach out instantly — turning agent governance into a live, collaborative workspace.</p>
+      <ul class="check-list">
+        <li>Live avatar stack of all users currently in the app</li>
+        <li>Hover to see names, roles, and active section</li>
+        <li>Reduces duplicate work and accelerates reviews</li>
+        <li>Built on lightweight, privacy-aware presence signals</li>
+      </ul>
+      <div class="avatar-demo" aria-hidden="true">
+        <span class="avatar" style="background:linear-gradient(135deg,#5b6cff,#7a4dff)">CG</span>
+        <span class="avatar" style="background:linear-gradient(135deg,#00c2a8,#5b6cff)">BV</span>
+        <span class="avatar" style="background:linear-gradient(135deg,#ff6aa9,#7a4dff)">AM</span>
+        <span class="avatar avatar-count">+4</span>
+        <span class="avatar-label"><span class="live-dot"></span> 7 online now</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FEATURES -->
 <section id="features">
   <div class="section-head">
@@ -841,6 +950,10 @@
     <div class="gallery-card">
       <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/22-IDEAVote.png?raw=true" alt="IDEA Voting" />
       <div class="gallery-meta"><h4>IDEA Voting</h4><span>IDEA Hub</span></div>
+    </div>
+    <div class="gallery-card">
+      <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/23-UserPresence.png?raw=true" alt="User Presence" />
+      <div class="gallery-meta"><h4>User Presence</h4><span>New · Collaboration</span></div>
     </div>
   </div>
 </section>
