@@ -805,7 +805,10 @@
       </ul>
     </div>
     <div class="showcase-img">
-      <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/02-Catalog.png?raw=true" alt="Agent Catalog" />
+      <div class="expandable" tabindex="0" role="button" aria-label="Expand image">
+        <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/02-Catalog.png?raw=true" alt="Agent Catalog" />
+        <span class="media-caption"><span class="mc-tag">Agent Catalog</span>Agent Catalog</span>
+      </div>
     </div>
   </div>
 
@@ -822,7 +825,10 @@
       </ul>
     </div>
     <div class="showcase-img">
-      <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/09-AgentDetails.png?raw=true" alt="Agent Details" />
+      <div class="expandable" tabindex="0" role="button" aria-label="Expand image">
+        <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/09-AgentDetails.png?raw=true" alt="Agent Details" />
+        <span class="media-caption"><span class="mc-tag">Deep Inspection</span>Agent Details</span>
+      </div>
     </div>
   </div>
 </section>
@@ -850,13 +856,19 @@
         </div>
       </div>
       <div class="module-screen">
-        <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/05-ActivitiesKanban.png?raw=true" alt="Activities Kanban" />
+        <div class="expandable" tabindex="0" role="button" aria-label="Expand image">
+          <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/05-ActivitiesKanban.png?raw=true" alt="Activities Kanban" />
+          <span class="media-caption"><span class="mc-tag">Activities</span>Activities Kanban</span>
+        </div>
       </div>
     </div>
 
     <div class="module-row flip">
       <div class="module-screen">
-        <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/10-AgentAssessment.png?raw=true" alt="Agent Assessment" />
+        <div class="expandable" tabindex="0" role="button" aria-label="Expand image">
+          <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/10-AgentAssessment.png?raw=true" alt="Agent Assessment" />
+          <span class="media-caption"><span class="mc-tag">Assessment</span>Agent Assessment</span>
+        </div>
       </div>
       <div class="module-info">
         <span class="module-tag">Assessment</span>
@@ -885,13 +897,19 @@
         </div>
       </div>
       <div class="module-screen">
-        <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/15-ReportingGeneral.png?raw=true" alt="Reporting Dashboard" />
+        <div class="expandable" tabindex="0" role="button" aria-label="Expand image">
+          <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/15-ReportingGeneral.png?raw=true" alt="Reporting Dashboard" />
+          <span class="media-caption"><span class="mc-tag">Reporting</span>Reporting Dashboard</span>
+        </div>
       </div>
     </div>
 
     <div class="module-row flip">
       <div class="module-screen">
-        <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/19-IDEAHome.png?raw=true" alt="IDEA Hub" />
+        <div class="expandable" tabindex="0" role="button" aria-label="Expand image">
+          <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/19-IDEAHome.png?raw=true" alt="IDEA Hub" />
+          <span class="media-caption"><span class="mc-tag">IDEA Hub</span>IDEA Hub</span>
+        </div>
       </div>
       <div class="module-info">
         <span class="module-tag">IDEA Hub</span>
@@ -918,7 +936,10 @@
         </div>
       </div>
       <div class="module-screen">
-        <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/08-Goals.png?raw=true" alt="Goals" />
+        <div class="expandable" tabindex="0" role="button" aria-label="Expand image">
+          <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/08-Goals.png?raw=true" alt="Goals" />
+          <span class="media-caption"><span class="mc-tag">Goals</span>Goals</span>
+        </div>
       </div>
     </div>
 
@@ -1139,18 +1160,33 @@
 })();
 
 (function(){
-  const cards = Array.from(document.querySelectorAll('.gallery-card'));
-  if(!cards.length) return;
+  const sources = Array.from(document.querySelectorAll('.gallery-card, .expandable'));
+  if(!sources.length) return;
 
-  const items = cards.map(card => {
-    const img = card.querySelector('img');
-    const meta = card.querySelector('.gallery-meta h4');
-    const tag = card.querySelector('.gallery-meta span');
+  const items = sources.map(el => {
+    const img = el.querySelector('img');
+    let title = '', tag = '';
+    if(el.classList.contains('gallery-card')){
+      const meta = el.querySelector('.gallery-meta h4');
+      const t = el.querySelector('.gallery-meta span');
+      title = meta ? meta.textContent.trim() : '';
+      tag = t ? t.textContent.trim() : '';
+    } else {
+      const cap = el.querySelector('.media-caption');
+      if(cap){
+        const tagEl = cap.querySelector('.mc-tag');
+        tag = tagEl ? tagEl.textContent.trim() : '';
+        const clone = cap.cloneNode(true);
+        const cloneTag = clone.querySelector('.mc-tag');
+        if(cloneTag) cloneTag.remove();
+        title = clone.textContent.trim();
+      }
+    }
     return {
-      src: img.src,
-      alt: img.alt || '',
-      title: meta ? meta.textContent.trim() : '',
-      tag: tag ? tag.textContent.trim() : ''
+      src: img ? img.src : '',
+      alt: img ? (img.alt || '') : '',
+      title: title,
+      tag: tag
     };
   });
 
@@ -1185,8 +1221,8 @@
   function next(){ idx = (idx + 1) % items.length; render(); }
   function prev(){ idx = (idx - 1 + items.length) % items.length; render(); }
 
-  cards.forEach((card, i) => {
-    card.addEventListener('click', () => open(i));
+  sources.forEach((el, i) => {
+    el.addEventListener('click', () => open(i));
   });
 
   btnClose.addEventListener('click', close);
