@@ -618,7 +618,6 @@
       <img class="hero-screen" data-key="activities" src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/05-ActivitiesKanban.png?raw=true" alt="Activities" />
       <img class="hero-screen" data-key="goals" src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/08-Goals.png?raw=true" alt="AI Goals" />
       <img class="hero-screen" data-key="reporting" src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/15-ReportingGeneral.png?raw=true" alt="Reporting" />
-      <img class="hero-screen" data-key="idea" src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/19-IDEAHome.png?raw=true" alt="IDEA Hub" />
     </div>
     <div class="floaty floaty-1" id="floatyTop">
       <span class="dot" id="floatyDotTop" style="background:#00c2a8"></span>
@@ -626,7 +625,7 @@
     </div>
     <div class="floaty floaty-2" id="floatyBot">
       <span class="dot" id="floatyDotBot" style="background:#5b6cff"></span>
-      <span id="floatyTextBot">16 Approved Agents</span>
+      <span id="floatyTextBot">Real-time Insights</span>
     </div>
   </div>
 </header>
@@ -1035,33 +1034,61 @@
 </div>
 
 <script>
-// Hero screen rotator
+// Hero screen rotator with floating badges (5 screens, 2s rotation)
 (function(){
   const screens = document.querySelectorAll('.hero-screen');
-  const pills = document.querySelectorAll('.hero-pill');
-  if(!screens.length || !pills.length) return;
+  if(!screens.length) return;
+
+  const badges = [
+    { top:{txt:'Live Dashboard',  color:'#00c2a8'}, bot:{txt:'Real-time Insights',         color:'#5b6cff'} },
+    { top:{txt:'Agent Catalog',   color:'#7a4dff'}, bot:{txt:'Search · Filter · Compare',  color:'#2f7adf'} },
+    { top:{txt:'Activities',      color:'#ff8a3d'}, bot:{txt:'Kanban · List · Calendar',   color:'#00c2a8'} },
+    { top:{txt:'AI Goals',        color:'#00c2a8'}, bot:{txt:'KPI & Outcome Tracking',     color:'#7a4dff'} },
+    { top:{txt:'Reporting',       color:'#2f7adf'}, bot:{txt:'Visual Analytics',           color:'#ff6aa9'} }
+  ];
+
+  const floatyTop = document.getElementById('floatyTop');
+  const floatyBot = document.getElementById('floatyBot');
+  const dotTop = document.getElementById('floatyDotTop');
+  const dotBot = document.getElementById('floatyDotBot');
+  const txtTop = document.getElementById('floatyTextTop');
+  const txtBot = document.getElementById('floatyTextBot');
+  const wrap = document.getElementById('heroScreens');
 
   let current = 0;
   let timer = null;
-  const INTERVAL = 4500;
+  const INTERVAL = 2000;
+
+  function applyBadges(i){
+    const b = badges[i] || badges[0];
+    if(floatyTop) floatyTop.classList.add('swap');
+    if(floatyBot) floatyBot.classList.add('swap');
+    setTimeout(() => {
+      if(dotTop) dotTop.style.background = b.top.color;
+      if(txtTop) txtTop.textContent = b.top.txt;
+      if(dotBot) dotBot.style.background = b.bot.color;
+      if(txtBot) txtBot.textContent = b.bot.txt;
+      if(floatyTop) floatyTop.classList.remove('swap');
+      if(floatyBot) floatyBot.classList.remove('swap');
+    }, 220);
+  }
 
   function show(i){
     screens.forEach((el, idx) => el.classList.toggle('active', idx === i));
-    pills.forEach((el, idx) => el.classList.toggle('active', idx === i));
+    applyBadges(i);
     current = i;
   }
   function next(){ show((current + 1) % screens.length); }
   function start(){ stop(); timer = setInterval(next, INTERVAL); }
   function stop(){ if(timer){ clearInterval(timer); timer = null; } }
 
-  pills.forEach((pill, i) => {
-    pill.addEventListener('click', () => { show(i); start(); });
-  });
+  if(wrap){
+    wrap.addEventListener('mouseenter', stop);
+    wrap.addEventListener('mouseleave', start);
+  }
 
-  const wrap = document.getElementById('heroScreens');
-  wrap.addEventListener('mouseenter', stop);
-  wrap.addEventListener('mouseleave', start);
-
+  // Set initial badge state to match the active first slide
+  applyBadges(0);
   start();
 })();
 
