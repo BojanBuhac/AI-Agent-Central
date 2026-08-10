@@ -3053,7 +3053,7 @@ html[data-theme="dark"] .showcase-img img,html[data-theme="dark"] .module-row im
     document.body.setAttribute('data-page', name);
     if(push !== false){ history.replaceState(null, '', '#' + name); }
     window.scrollTo({top:0, behavior: push === false ? 'auto' : 'smooth'});
-    revealScan();
+    if(typeof revealScan === 'function') revealScan();
   }
   tabs.forEach(function(t){ t.addEventListener('click', function(){ show(t.dataset.page); }); });
   document.addEventListener('click', function(e){
