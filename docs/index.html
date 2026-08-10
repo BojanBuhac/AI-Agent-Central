@@ -1463,6 +1463,66 @@ html[data-theme="dark"] .showcase-img img,html[data-theme="dark"] .module-row im
 /* ---- image viewer affordance: click the picture to close ---- */
 .lightbox-img{cursor:zoom-out}
 
+/* =====================================================================
+   FEATURE BADGE - below top nav, right aligned
+   ===================================================================== */
+.feature-badge-bar{
+  max-width:1300px;margin:10px auto 0;padding:0 28px;
+  display:flex;justify-content:flex-end;
+}
+.feature-badge{
+  position:relative;overflow:hidden;cursor:pointer;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:9px 16px;border-radius:999px;
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:-.01em;
+  color:var(--text);
+  background:color-mix(in srgb, var(--surface) 82%, transparent);
+  border:1px solid var(--border-strong);
+  backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);
+  box-shadow:0 6px 20px rgba(20,30,70,.08);
+  transition:transform .22s cubic-bezier(.22,.9,.3,1), box-shadow .25s ease, border-color .25s ease;
+}
+.feature-badge::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;
+  background:var(--gradient-1);opacity:.55;
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+}
+.feature-badge::after{
+  content:"";position:absolute;top:0;bottom:0;width:38%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
+  transform:translateX(-160%);animation:fbSheen 5.5s ease-in-out infinite;
+}
+@keyframes fbSheen{0%,62%{transform:translateX(-160%)}100%{transform:translateX(330%)}}
+.feature-badge:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(91,91,255,.24);border-color:var(--brand)}
+.feature-badge:active{transform:translateY(0)}
+.fb-spark{
+  font-size:12px;line-height:1;
+  background:var(--gradient-1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:fbSpin 6s linear infinite;
+}
+@keyframes fbSpin{to{transform:rotate(360deg)}}
+.fb-label{
+  font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  padding:3px 8px;border-radius:999px;color:#fff;background:var(--gradient-1);
+  box-shadow:0 3px 10px rgba(91,91,255,.32);
+}
+.fb-sep{width:1px;height:14px;background:var(--border-strong)}
+.fb-text{white-space:nowrap;background:var(--gradient-1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
+.fb-arrow{font-size:13px;color:var(--brand);transition:transform .22s ease}
+.feature-badge:hover .fb-arrow{transform:translateX(3px)}
+html[data-theme="dark"] .feature-badge{background:color-mix(in srgb, var(--surface) 88%, transparent);box-shadow:0 8px 26px rgba(0,0,0,.45)}
+html[data-theme="dark"] .feature-badge::after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.16),transparent)}
+@media (prefers-reduced-motion: reduce){
+  .feature-badge::after,.fb-spark{animation:none}
+}
+@media (max-width:640px){
+  .feature-badge-bar{justify-content:center;padding:0 16px}
+  .feature-badge{padding:8px 13px;gap:8px;font-size:12.5px}
+  .fb-sep,.fb-spark{display:none}
+  .fb-text{white-space:normal;text-align:left}
+}
+
 </style>
 </head>
 <body data-page="overview">
@@ -1489,6 +1549,18 @@ html[data-theme="dark"] .showcase-img img,html[data-theme="dark"] .module-row im
     </div>
   </div>
 </nav>
+
+<!-- FEATURE BADGE -->
+<div class="feature-badge-bar">
+  <button class="feature-badge" data-goto="agent365" title="See the Microsoft Agent 365 integration">
+    <span class="fb-spark" aria-hidden="true">✦</span>
+    <span class="fb-label">New feature</span>
+    <span class="fb-sep" aria-hidden="true"></span>
+    <span class="fb-text">Microsoft Agent 365 integration</span>
+    <span class="fb-arrow" aria-hidden="true">→</span>
+  </button>
+</div>
+
 <main>
 <div class="page active" id="page-overview">
 
