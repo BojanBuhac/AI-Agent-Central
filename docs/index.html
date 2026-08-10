@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1161,23 +1161,7 @@ footer{
   --ring:0 0 0 1px rgba(91,91,255,.16);
   --nav-h:70px;
 }
-html[data-theme="dark"]{
-  --bg:#0b0e17;
-  --bg-soft:#121725;
-  --surface:#151a29;
-  --surface-2:#1a2032;
-  --text:#eef1f9;
-  --text-soft:#a8b1c7;
-  --text-mute:#7b8399;
-  --border:#232a3d;
-  --border-strong:#2e3650;
-  --shadow-sm:0 1px 2px rgba(0,0,0,.4);
-  --shadow-md:0 10px 30px rgba(0,0,0,.45);
-  --shadow-lg:0 30px 70px rgba(0,0,0,.55);
-  --gradient-soft:linear-gradient(135deg,#1b2036 0%,#221b3a 50%,#122f2c 100%);
-}
 html{scroll-behavior:smooth}
-body{transition:background .35s ease,color .35s ease}
 
 /* ---------- ambient aurora ---------- */
 body::before{
@@ -1191,7 +1175,6 @@ body::before{
   0%{transform:translate3d(0,0,0) scale(1)}
   100%{transform:translate3d(0,-26px,0) scale(1.06)}
 }
-html[data-theme="dark"] body::before{opacity:.75}
 
 /* ---------- scroll progress ---------- */
 .scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;z-index:120;background:var(--gradient-1);box-shadow:0 0 14px rgba(91,91,255,.6);transition:width .08s linear}
@@ -1225,12 +1208,6 @@ html[data-theme="dark"] body::before{opacity:.75}
 .tab .tab-dot{width:6px;height:6px;border-radius:50%;background:var(--brand-3);box-shadow:0 0 0 3px rgba(0,207,168,.18)}
 .tab.active .tab-dot{background:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.25)}
 .nav-tools{display:flex;align-items:center;gap:8px}
-.icon-btn{
-  width:40px;height:40px;border-radius:12px;display:grid;place-items:center;cursor:pointer;
-  border:1px solid var(--border-strong);background:var(--surface);color:var(--text);
-  font-size:16px;transition:.2s ease;
-}
-.icon-btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm);border-color:var(--brand)}
 .nav-burger{display:none}
 
 /* ---------- pages ---------- */
@@ -1371,36 +1348,6 @@ body[data-page="deploy"] .progress-widget{display:flex}
 .to-top.show{opacity:1;pointer-events:auto;transform:none}
 body[data-page="deploy"] .to-top{bottom:88px}
 
-/* ---------- dark-mode surface fixes ---------- */
-html[data-theme="dark"] .hero-screens,
-html[data-theme="dark"] .floaty,
-html[data-theme="dark"] .framework-card,
-html[data-theme="dark"] .whatsnew-media,
-html[data-theme="dark"] .feature,
-html[data-theme="dark"] .showcase-img,
-html[data-theme="dark"] .gallery-card,
-html[data-theme="dark"] .module-row,
-html[data-theme="dark"] footer,
-html[data-theme="dark"] .icon-btn,
-html[data-theme="dark"] #page-deploy .timeline-preview,
-html[data-theme="dark"] #page-deploy .prereq-card,
-html[data-theme="dark"] #page-deploy .stage,
-html[data-theme="dark"] #page-deploy .step:hover,
-html[data-theme="dark"] #page-deploy .step-num,
-html[data-theme="dark"] #page-deploy .step-img,
-html[data-theme="dark"] #page-deploy .agent-card,
-html[data-theme="dark"] #page-deploy .prereq,
-html[data-theme="dark"] #page-pillars .stack-preview,
-html[data-theme="dark"] #page-pillars .pillar,
-html[data-theme="dark"] #page-pillars .option-card,
-html[data-theme="dark"] #page-pillars .section-list li,
-html[data-theme="dark"] #page-pillars .field-chip,
-html[data-theme="dark"] .a365-tile{background:var(--surface);color:var(--text);border-color:var(--border)}
-html[data-theme="dark"] .prereq,html[data-theme="dark"] .step-img{border-color:var(--border)}
-html[data-theme="dark"] .tabs{background:var(--bg-soft)}
-html[data-theme="dark"] .gallery-card img,html[data-theme="dark"] .step-img img,
-html[data-theme="dark"] .showcase-img img,html[data-theme="dark"] .module-row img{filter:brightness(.94) contrast(1.02)}
-
 /* ---------- responsive ---------- */
 @media (max-width:1080px){
   .nav-inner{flex-wrap:wrap;row-gap:10px}
@@ -1511,8 +1458,6 @@ html[data-theme="dark"] .showcase-img img,html[data-theme="dark"] .module-row im
 .fb-text{white-space:nowrap;background:var(--gradient-1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
 .fb-arrow{font-size:13px;color:var(--brand);transition:transform .22s ease}
 .feature-badge:hover .fb-arrow{transform:translateX(3px)}
-html[data-theme="dark"] .feature-badge{background:color-mix(in srgb, var(--surface) 88%, transparent);box-shadow:0 8px 26px rgba(0,0,0,.45)}
-html[data-theme="dark"] .feature-badge::after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.16),transparent)}
 @media (prefers-reduced-motion: reduce){
   .feature-badge::after,.fb-spark{animation:none}
 }
@@ -1584,8 +1529,6 @@ html[data-theme="dark"] .feature-badge::after{background:linear-gradient(100deg,
   transform:translateX(-160%);animation:fbSheen 5s ease-in-out infinite;
 }
 .ver-star{display:inline-block;margin-right:2px;animation:fbSpin 6s linear infinite}
-
-html[data-theme="dark"] .release-bar{filter:saturate(1.08)}
 @media (prefers-reduced-motion: reduce){
   .release-bar::after,.pill-version::after,.ver-star{animation:none}
 }
@@ -1628,7 +1571,6 @@ html[data-theme="dark"] .release-bar{filter:saturate(1.08)}
       <button class="tab" data-page="pillars" role="tab">Pillar templates</button>
     </div>
     <div class="nav-tools">
-      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
       <span class="btn btn-primary btn-soon" title="Available 1 September 2026"><span class="soon-dot"></span>Solution · Coming 1 Sept 2026</span>
     </div>
   </div>
@@ -3185,19 +3127,6 @@ html[data-theme="dark"] .release-bar{filter:saturate(1.08)}
 <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
 
 <script>
-/* ---------- theme ---------- */
-(function(){
-  var root = document.documentElement, KEY = 'aac-theme';
-  var saved = null; try{ saved = localStorage.getItem(KEY); }catch(e){}
-  if(saved) root.setAttribute('data-theme', saved);
-  var btn = document.getElementById('themeToggle');
-  btn.addEventListener('click', function(){
-    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    try{ localStorage.setItem(KEY, next); }catch(e){}
-  });
-})();
-
 /* ---------- page router ---------- */
 (function(){
   var PAGES = ['overview','agent365','deploy','pillars'];
