@@ -1362,15 +1362,6 @@ body[data-page="deploy"] .to-top{bottom:88px}
   .tab{padding:9px 12px;font-size:13px}
 }
 
-/* ---------- coming-soon download state ---------- */
-.btn-soon{cursor:default;position:relative;opacity:.96}
-.btn-soon:hover{transform:none}
-.btn.btn-primary.btn-soon{box-shadow:0 8px 22px rgba(91,91,255,.26)}
-.btn-ghost.btn-soon{color:var(--text-soft);border-style:dashed}
-.soon-dot{width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 0 rgba(255,176,32,.6);animation:blip 2.4s infinite;flex-shrink:0}
-.btn-primary.btn-soon .soon-dot{background:#ffd479}
-.soon-inline{display:inline-flex;align-items:baseline;gap:6px;padding:2px 9px;border-radius:8px;background:var(--gradient-soft);border:1px solid var(--border)}
-.soon-inline em{font-style:normal;font-weight:600;color:var(--brand-2);font-size:13px}
 
 /* =====================================================================
    POLISH v2 - tighter image corners, Agent 365 spacing, viewer
@@ -1540,6 +1531,97 @@ body[data-page="deploy"] .to-top{bottom:88px}
   .rb-text{display:none}
 }
 
+
+/* =====================================================================
+   AI HUB
+   ===================================================================== */
+.hub-hero{max-width:1300px;margin:0 auto;padding:26px 28px 10px}
+.hub-hero-card{
+  position:relative;overflow:hidden;border-radius:var(--radius-xl);
+  background:linear-gradient(135deg,#0f2f3d 0%,#123a5e 45%,#3b1d6b 100%);
+  color:#fff;padding:44px;box-shadow:var(--shadow-lg);
+}
+.hub-hero-card::before{
+  content:"";position:absolute;inset:-40% -10% auto -10%;height:520px;
+  background:radial-gradient(closest-side, rgba(0,207,168,.28), transparent 70%),
+             radial-gradient(closest-side, rgba(91,91,255,.34), transparent 70%);
+  background-position:15% 0, 88% 18%;background-repeat:no-repeat;
+  animation:auroraDrift 18s ease-in-out infinite alternate;pointer-events:none;
+}
+.hub-hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.05fr;gap:44px;align-items:center}
+.hub-hero-card h2{font-family:'Sora',sans-serif;font-size:clamp(28px,3.4vw,42px);line-height:1.08;letter-spacing:-.035em;margin-bottom:16px}
+.hub-hero-card p{color:rgba(255,255,255,.84);font-size:16px;max-width:560px}
+
+.hub-grid{
+  max-width:1300px;margin:0 auto;padding:0 28px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+}
+.hub-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);
+  display:flex;flex-direction:column;
+  transition:transform .3s cubic-bezier(.22,.9,.3,1), box-shadow .3s ease, border-color .3s ease;
+}
+.hub-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--brand)}
+.hub-shot{position:relative;overflow:hidden;cursor:zoom-in;border-bottom:1px solid var(--border)}
+.hub-shot img{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;object-position:top left;transition:transform .35s ease}
+.hub-shot:hover img{transform:scale(1.03)}
+.hub-body{padding:22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.hub-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.hub-head h3{font-family:'Sora',sans-serif;font-size:18px;letter-spacing:-.025em;margin:0}
+.hub-icon{
+  width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+  font-size:15px;color:#fff;flex-shrink:0;
+}
+.hi-1{background:linear-gradient(135deg,#5b5bff,#8a3ffc)}
+.hi-2{background:linear-gradient(135deg,#00cfa8,#2f7adf)}
+.hi-3{background:linear-gradient(135deg,#ff8a3d,#ff5f9e)}
+.hi-4{background:linear-gradient(135deg,#8a3ffc,#ff5f9e)}
+.hi-5{background:linear-gradient(135deg,#ffb020,#ff8a3d)}
+.hi-6{background:var(--gradient-1)}
+.hub-opt{
+  margin-left:auto;flex-shrink:0;
+  padding:3px 10px;border-radius:999px;
+  background:var(--bg-soft);color:var(--text-mute);
+  font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  border:1px solid var(--border);
+}
+.hub-opt-on{background:var(--gradient-1);color:#fff;border-color:transparent}
+.hub-body p{font-size:14.2px;color:var(--text-soft);flex:1}
+.hub-card-accent{
+  background:var(--gradient-soft);
+  border-color:color-mix(in srgb, var(--brand) 28%, var(--border));
+}
+
+/* =====================================================================
+   DEPLOYMENT - credentials + wide note
+   ===================================================================== */
+#page-deploy .note-wide{
+  max-width:1300px;margin:0 auto 22px;padding:16px 22px;
+  border-radius:14px;background:var(--gradient-soft);
+  border:1px solid var(--border);font-size:14.5px;color:var(--text-soft);
+}
+#page-deploy .note-wide strong{color:var(--brand-2)}
+.cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.cred-card{
+  background:var(--surface-2);border:1px solid var(--border);
+  border-radius:14px;padding:18px 20px;
+  border-left:3px solid var(--brand);
+}
+.cred-card h4{font-size:14.5px;margin:8px 0 5px;letter-spacing:-.01em}
+.cred-card p{font-size:13px;color:var(--text-soft)}
+.cred-icon{font-size:20px;line-height:1}
+
+@media (max-width:1080px){
+  .hub-hero-grid{grid-template-columns:1fr;gap:28px}
+  .hub-hero-card{padding:30px 24px}
+  .hub-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:760px){
+  .hub-grid{grid-template-columns:1fr;padding:0 20px}
+  .cred-grid{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body data-page="overview">
@@ -1550,7 +1632,7 @@ body[data-page="deploy"] .to-top{bottom:88px}
 <div class="release-bar" role="status">
   <div class="release-inner">
     <span class="rb-tag">🎉 Version 3</span>
-    <span class="rb-text"><strong>AI Agent Central v3 is here</strong> — Microsoft Agent 365 integration, a refreshed experience, and everything in one place.</span>
+    <span class="rb-text"><strong>AI Agent Central v3 is here</strong> — the new <strong>AI Hub</strong> for employees, Microsoft Agent 365 integration, and a refreshed experience.</span>
     <button class="rb-cta" data-goto="agent365">See what's new →</button>
   </div>
 </div>
@@ -1567,11 +1649,12 @@ body[data-page="deploy"] .to-top{bottom:88px}
     <div class="tabs" role="tablist">
       <button class="tab active" data-page="overview" role="tab">Overview</button>
       <button class="tab" data-page="agent365" role="tab"><span class="tab-dot"></span>Agent 365</button>
+      <button class="tab" data-page="aihub" role="tab"><span class="tab-dot"></span>AI Hub</button>
       <button class="tab" data-page="deploy" role="tab">Deployment</button>
       <button class="tab" data-page="pillars" role="tab">Pillar templates</button>
     </div>
     <div class="nav-tools">
-      <span class="btn btn-primary btn-soon" title="Available 1 September 2026"><span class="soon-dot"></span>Solution · Coming 1 Sept 2026</span>
+      <a class="btn btn-primary" href="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/solution/AIAgentsGovernanceHuB_3_0_0_13.zip?raw=true" target="_blank" rel="noopener noreferrer">↓ Download v3 solution</a>
     </div>
   </div>
 </nav>
@@ -1597,10 +1680,10 @@ body[data-page="deploy"] .to-top{bottom:88px}
       <span class="pill"><span class="pill-dot"></span> Aligned with the Microsoft Agent Readiness Framework</span>
     </div>
     <h1 class="title">Register, validate, and govern your <span class="grad">AI agents</span> at enterprise scale.</h1>
-    <p class="lead">A unified command center for the AI agent lifecycle - from intake and assessment through deployment, adoption, and continuous improvement - now with native <strong>Agent 365</strong> integration.</p>
+    <p class="lead">A unified command center for the AI agent lifecycle - from intake and assessment through deployment, adoption, and continuous improvement - now with the employee-facing <strong>AI Hub</strong> and native <strong>Agent 365</strong> integration.</p>
     <div class="hero-actions">
       <a href="#features" class="btn btn-primary">Explore features →</a>
-      <button class="btn btn-ghost" data-goto="agent365">✦ What's new: Agent 365</button>
+      <button class="btn btn-ghost" data-goto="aihub">✦ New: AI Hub for employees</button>
       <button class="btn btn-ghost" data-goto="deploy">Deployment guide →</button>
     </div>
     <div class="meta-row">
@@ -1690,6 +1773,33 @@ body[data-page="deploy"] .to-top{bottom:88px}
   </div>
 </section>
 
+
+<section class="hub-hero">
+  <div class="hub-hero-card">
+    <div class="hub-hero-grid">
+      <div class="a365-copy">
+        <span class="a365-badge"><span class="blip"></span> New in v3 · AI Hub</span>
+        <h2>A companion app for everyone else.</h2>
+        <p>AI Agent Central is for the people who govern AI. <strong>AI Hub</strong> is for everyone who uses it - an employee workspace with an AI product store, ideas bank, surveys, and learning, wrapped in light gamification. Every module is optional.</p>
+        <div class="a365-chip-row" style="margin-top:22px">
+          <span class="a365-chip">Dashboard</span>
+          <span class="a365-chip">AI Product Store</span>
+          <span class="a365-chip">Ideas Bank</span>
+          <span class="a365-chip">Surveys</span>
+          <span class="a365-chip">Learning</span>
+        </div>
+        <div class="a365-actions" style="display:flex;gap:12px;flex-wrap:wrap">
+          <button class="btn btn-primary" data-goto="aihub">Explore AI Hub →</button>
+        </div>
+      </div>
+      <div class="a365-shot expandable" tabindex="0" role="button" aria-label="Expand image">
+        <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/60-AI-Hub-Dashboard.png?raw=true" alt="AI Hub dashboard" />
+        <span class="media-caption" style="display:none"><span class="mc-tag">AI Hub</span>AI Hub dashboard</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- WHAT'S NEW - USER PRESENCE -->
 <section class="whatsnew-section">
   <div class="whatsnew-card">
@@ -1755,6 +1865,11 @@ body[data-page="deploy"] .to-top{bottom:88px}
       <div class="feature-icon ic-5">✦</div>
       <h3>Agent 365 Integration</h3>
       <p>Own Agent 365 licenses? Sync your live agent estate straight into the catalog and govern discovered agents alongside registered ones.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon ic-3">◈</div>
+      <h3>AI Hub for Employees</h3>
+      <p>A companion app with an AI product store, ideas bank, surveys, and learning - so your whole organization can discover and shape AI, not just govern it.</p>
     </div>
     <div class="feature">
       <div class="feature-icon ic-6">■</div>
@@ -2151,20 +2266,250 @@ body[data-page="deploy"] .to-top{bottom:88px}
   </section>
 </div>
 
+
+<div class="page" id="page-aihub">
+  <div class="page-head">
+    <span class="kicker"><span class="pill-dot"></span> New in v3 · Companion app for employees</span>
+    <h1>Meet <span class="grad">AI Hub</span> - where your whole organization meets AI.</h1>
+    <p>AI Agent Central governs your AI programme. <strong>AI Hub</strong> is the front door for everyone else - a friendly, gamified workspace where employees discover approved AI products, pitch ideas, answer surveys, and build their skills. Every module is optional: switch on only what your organization needs.</p>
+    <div class="head-actions">
+      <a href="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/solution/AIAgentsGovernanceHuB_3_0_0_13.zip?raw=true" class="btn btn-primary" target="_blank" rel="noopener noreferrer">↓ Download v3 solution</a>
+      <button class="btn btn-ghost" data-goto="deploy">Deployment guide →</button>
+      <button class="btn btn-ghost" data-goto="overview">← Back to overview</button>
+    </div>
+    <div class="head-stats">
+      <div><div class="num">5</div><div class="lbl">Modules</div></div>
+      <div><div class="num">100%</div><div class="lbl">Optional &amp; toggleable</div></div>
+      <div><div class="num">1</div><div class="lbl">App for every employee</div></div>
+    </div>
+  </div>
+
+  <!-- HERO SHOT -->
+  <section class="hub-hero">
+    <div class="hub-hero-card">
+      <div class="hub-hero-grid">
+        <div class="a365-copy">
+          <span class="a365-badge"><span class="blip"></span> AI Hub · Employee experience</span>
+          <h2>Adoption you can actually see.</h2>
+          <p>A welcoming dashboard greets every employee with what's new, what's popular, and what they've achieved - turning AI rollout from a mandate into something people opt into.</p>
+          <ul class="a365-list">
+            <li>Personal dashboard with progress, points, and streaks</li>
+            <li>Gamification - levels, badges, and leaderboards</li>
+            <li>Every module can be switched on or off per tenant</li>
+            <li>Shares the same Dataverse foundation as AI Agent Central</li>
+          </ul>
+          <div class="a365-chip-row">
+            <span class="a365-chip">Dashboard</span>
+            <span class="a365-chip">AI Product Store</span>
+            <span class="a365-chip">Ideas Bank</span>
+            <span class="a365-chip">Surveys</span>
+            <span class="a365-chip">Learning</span>
+          </div>
+        </div>
+        <div class="a365-shot expandable" tabindex="0" role="button" aria-label="Expand image">
+          <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/60-AI-Hub-Dashboard.png?raw=true" alt="AI Hub dashboard" />
+          <span class="media-caption" style="display:none"><span class="mc-tag">AI Hub</span>AI Hub dashboard</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULE CARDS -->
+  <section id="hub-modules">
+    <div class="section-head">
+      <span class="eyebrow">The five modules</span>
+      <h2 class="section-title">Switch on what fits your organization</h2>
+      <p class="section-lead">Every module below is optional. Start with one, add the rest as your programme matures - no redeployment required.</p>
+    </div>
+
+    <div class="hub-grid">
+      <div class="hub-card">
+        <div class="hub-shot expandable" tabindex="0" role="button" aria-label="Expand image">
+          <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/60-AI-Hub-Dashboard.png?raw=true" alt="AI Hub dashboard" />
+          <span class="media-caption"><span class="mc-tag">AI Hub</span>Dashboard</span>
+        </div>
+        <div class="hub-body">
+          <div class="hub-head"><span class="hub-icon hi-1">◆</span><h3>Dashboard</h3><span class="hub-opt">Optional</span></div>
+          <p>A personalized landing page: what's new in AI, the employee's own progress, points and badges earned, and quick links into every other module.</p>
+          <div class="mini-list">
+            <span class="mini-tag">Personal progress</span>
+            <span class="mini-tag">Announcements</span>
+            <span class="mini-tag">Quick actions</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hub-card">
+        <div class="hub-shot expandable" tabindex="0" role="button" aria-label="Expand image">
+          <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/61-AI-Hub-AppStore.png?raw=true" alt="AI Hub product store" />
+          <span class="media-caption"><span class="mc-tag">AI Hub</span>AI Product Store</span>
+        </div>
+        <div class="hub-body">
+          <div class="hub-head"><span class="hub-icon hi-2">▲</span><h3>AI Product Store</h3><span class="hub-opt">Optional</span></div>
+          <p>A curated storefront of every approved AI product and agent in your organization. Employees browse by category, read what a tool does, and launch it - so nobody has to ask "what am I allowed to use?"</p>
+          <div class="mini-list">
+            <span class="mini-tag">Curated catalog</span>
+            <span class="mini-tag">Categories</span>
+            <span class="mini-tag">Ratings</span>
+            <span class="mini-tag">One-click launch</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hub-card">
+        <div class="hub-shot expandable" tabindex="0" role="button" aria-label="Expand image">
+          <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/62-AI-Hub-Ideas.png?raw=true" alt="AI Hub ideas bank" />
+          <span class="media-caption"><span class="mc-tag">AI Hub</span>Ideas Bank</span>
+        </div>
+        <div class="hub-body">
+          <div class="hub-head"><span class="hub-icon hi-3">●</span><h3>Ideas Bank</h3><span class="hub-opt">Optional</span></div>
+          <p>Let employees pitch the AI use cases they actually want. Ideas are submitted, voted on, and triaged - giving your CoE a demand-driven pipeline instead of guesswork.</p>
+          <div class="mini-list">
+            <span class="mini-tag">Submit</span>
+            <span class="mini-tag">Vote</span>
+            <span class="mini-tag">Status tracking</span>
+            <span class="mini-tag">Moderation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hub-card">
+        <div class="hub-shot expandable" tabindex="0" role="button" aria-label="Expand image">
+          <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/63-AI-Hub-Surveys.png?raw=true" alt="AI Hub surveys" />
+          <span class="media-caption"><span class="mc-tag">AI Hub</span>Surveys</span>
+        </div>
+        <div class="hub-body">
+          <div class="hub-head"><span class="hub-icon hi-4">♦</span><h3>Surveys</h3><span class="hub-opt">Optional</span></div>
+          <p>Capture sentiment and measure impact straight from the people using AI every day. Results feed the reporting suite in AI Agent Central, closing the loop between rollout and evidence.</p>
+          <div class="mini-list">
+            <span class="mini-tag">Pulse surveys</span>
+            <span class="mini-tag">Feedback</span>
+            <span class="mini-tag">Reporting feed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hub-card">
+        <div class="hub-shot expandable" tabindex="0" role="button" aria-label="Expand image">
+          <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/64-AI-Hub-Learning.png?raw=true" alt="AI Hub learning" />
+          <span class="media-caption"><span class="mc-tag">AI Hub</span>Learning</span>
+        </div>
+        <div class="hub-body">
+          <div class="hub-head"><span class="hub-icon hi-5">★</span><h3>Learning</h3><span class="hub-opt">Optional</span></div>
+          <p>Curated learning paths and courses that build real AI skills, with progress tracking and completion rewards - so enablement lives in the same place as the tools.</p>
+          <div class="mini-list">
+            <span class="mini-tag">Learning paths</span>
+            <span class="mini-tag">Courses</span>
+            <span class="mini-tag">Progress</span>
+            <span class="mini-tag">Rewards</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hub-card hub-card-accent">
+        <div class="hub-body">
+          <div class="hub-head"><span class="hub-icon hi-6">✦</span><h3>Gamification</h3><span class="hub-opt hub-opt-on">Built in</span></div>
+          <p>Points, levels, badges, and leaderboards run across every module - rewarding the behaviours you want more of: exploring tools, sharing ideas, finishing courses.</p>
+          <div class="mini-list">
+            <span class="mini-tag">Points</span>
+            <span class="mini-tag">Levels</span>
+            <span class="mini-tag">Badges</span>
+            <span class="mini-tag">Leaderboard</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAL DASHBOARD SHOWCASE -->
+  <section>
+    <div class="showcase">
+      <div class="showcase-text">
+        <span class="eyebrow">Personal experience</span>
+        <h3>Every employee sees their own journey.</h3>
+        <p>A personal dashboard tracks the products someone has tried, the ideas they've raised, the surveys they've answered, and the learning they've completed - alongside the points and badges they've collected along the way.</p>
+        <ul class="check-list">
+          <li>Individual progress across all active modules</li>
+          <li>Points, level, and badge collection at a glance</li>
+          <li>Encourages return visits and sustained adoption</li>
+        </ul>
+      </div>
+      <div class="showcase-img">
+        <div class="expandable" tabindex="0" role="button" aria-label="Expand image">
+          <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/75-AI-Hub-Personal-Dashboard.png?raw=true" alt="AI Hub personal dashboard" />
+          <span class="media-caption"><span class="mc-tag">AI Hub</span>Personal dashboard</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMIN CONTROL -->
+  <section id="hub-admin">
+    <div class="section-head">
+      <span class="eyebrow">Administration</span>
+      <h2 class="section-title">You stay in control</h2>
+      <p class="section-lead">Everything employees see is configurable from AI Agent Central - features, content, rewards, and moderation.</p>
+    </div>
+
+    <div class="gallery">
+      <div class="gallery-card">
+        <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/70-AI-Hub-Feature-Enablement.png?raw=true" alt="Feature enablement" />
+        <div class="gallery-meta"><h4>Feature Enablement</h4><span>Toggle modules</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/71-AI-Hub-App-Store-Product-Edit.png?raw=true" alt="Product editor" />
+        <div class="gallery-meta"><h4>Product Editor</h4><span>App Store</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/72-AI-Hub-Learning-Config.png?raw=true" alt="Learning configuration" />
+        <div class="gallery-meta"><h4>Learning Setup</h4><span>Courses &amp; paths</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/73-AI-Hub-Gamification-Config.png?raw=true" alt="Gamification configuration" />
+        <div class="gallery-meta"><h4>Gamification Rules</h4><span>Points &amp; badges</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/74-AI-Hub-Blocked-words.png?raw=true" alt="Blocked words" />
+        <div class="gallery-meta"><h4>Blocked Words</h4><span>Moderation</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/75-AI-Hub-Personal-Dashboard.png?raw=true" alt="Personal dashboard" />
+        <div class="gallery-meta"><h4>Personal Dashboard</h4><span>Employee view</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="a365-note">
+    <div class="a365-note-inner">
+      <span style="font-size:20px;line-height:1">🎛️</span>
+      <div style="font-size:14.5px;color:var(--text-soft)">
+        <strong>All modules are optional.</strong> Use <em>Feature Enablement</em> in settings to switch Dashboard, AI Product Store, Ideas Bank, Surveys, and Learning on or off independently - roll out one module at a time, or run the full hub from day one.
+      </div>
+    </div>
+  </div>
+
+  <section class="cta-wrap" style="padding:0;margin-top:56px">
+    <div class="cta">
+      <h2>Give everyone a front door to AI.</h2>
+      <p>Deploy AI Hub alongside AI Agent Central and turn your AI programme into something the whole organization can explore, shape, and learn from.</p>
+    </div>
+  </section>
+</div>
+
 <div class="page" id="page-deploy">
   <div class="page-head">
     <span class="kicker"><span class="pill-dot"></span> Step-by-step installation playbook</span>
     <h1>Deploy <span class="grad">AI Agent Central</span> in your tenant.</h1>
-    <p>A complete walkthrough for installing, configuring, and publishing AI Agent Central - from the Power Platform environment and Dataverse solution import to Copilot Studio agent configuration and your first business unit setup.</p>
+    <p>A complete walkthrough for installing, configuring, and publishing AI Agent Central and AI Hub - from the Power Platform environment and Dataverse solution import, through Copilot Studio agents and the Agent 365 custom connector, to your first business unit setup.</p>
     <div class="head-actions">
       <a href="#prerequisites" class="btn btn-primary">Start with prerequisites →</a>
-      <span class="btn btn-ghost btn-soon"><span class="soon-dot"></span>Download coming 1 September 2026</span>
+      <a href="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/solution/AIAgentsGovernanceHuB_3_0_0_13.zip?raw=true" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">↓ Download solution</a>
       <button class="btn btn-ghost" data-goto="overview">← Back to overview</button>
     </div>
     <div class="head-stats">
-      <div><div class="num">5</div><div class="lbl">Deployment stages</div></div>
+      <div><div class="num">6</div><div class="lbl">Deployment stages</div></div>
       <div><div class="num">3</div><div class="lbl">Copilot Studio agents</div></div>
-      <div><div class="num">~60</div><div class="lbl">Minutes end-to-end</div></div>
+      <div><div class="num">~75</div><div class="lbl">Minutes end-to-end</div></div>
     </div>
   </div>
   <div class="subnav">
@@ -2173,6 +2518,7 @@ body[data-page="deploy"] .to-top{bottom:88px}
       <a href="#environment">Environment</a>
       <a href="#solution">Solution</a>
       <a href="#agents">Agents</a>
+      <a href="#custom-agent">Custom agent</a>
       <a href="#first-steps">First steps</a>
     </div>
   </div>
@@ -2339,7 +2685,7 @@ body[data-page="deploy"] .to-top{bottom:88px}
       </div>
       <div class="step">
         <div class="step-num">4</div>
-        <div class="step-body"><span class="soon-inline"><strong>Download the latest solution package</strong> · <em>coming 1 September 2026</em></span>, then click <strong>Browse</strong>, select the <code>AIAgentsGovernanceHuB_1_0_0_72.zip</code> file, and click <strong>Next</strong>.</div>
+        <div class="step-body"><a href="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/solution/AIAgentsGovernanceHuB_3_0_0_13.zip?raw=true" target="_blank" rel="noopener noreferrer"><strong>Download the latest solution package</strong> ↓</a>, then click <strong>Browse</strong>, select the <code>AIAgentsGovernanceHuB_3_0_0_13.zip</code> file, and click <strong>Next</strong>.</div>
       </div>
       <div class="step">
         <div class="step-num">5</div>
@@ -2729,17 +3075,202 @@ body[data-page="deploy"] .to-top{bottom:88px}
   </div>
 </section>
 
+
+<!-- STAGE: CUSTOM AGENT / AGENT 365 CONNECTOR -->
+<section id="custom-agent">
+  <div class="section-head">
+    <span class="eyebrow">Stage 5</span>
+    <h2 class="section-title">Deploy the custom agent connector</h2>
+    <p class="section-lead">Required for the Agent 365 integration - register an app in Entra ID, wire it to the custom connector, then let the flows pull your agent estate into Dataverse.</p>
+  </div>
+
+  <div class="note note-wide">
+    <strong>When do I need this?</strong> Only if you want the <strong>Microsoft Agent 365 integration</strong> - the tab that discovers agents already running in your tenant. Skip this stage if you are registering agents manually.
+  </div>
+
+  <div class="stage">
+    <div class="stage-head">
+      <div class="stage-num">10</div>
+      <div class="stage-head-text">
+        <span class="stage-tag">Entra ID</span>
+        <h3>Create the app registration</h3>
+        <p>Register an application that will authenticate against Microsoft Graph on behalf of the connector.</p>
+      </div>
+      <div class="stage-time">⏱ ~6 min</div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">Go to the <a href="https://entra.microsoft.com" target="_blank" rel="noopener noreferrer">Microsoft Entra admin center</a> and open <strong>App registrations &gt; New registration</strong>.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">Give it a recognizable name - for example <code>AI Agent Central A365</code> - choose <strong>Accounts in this organizational directory only</strong>, and click <strong>Register</strong>.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">On the <strong>Overview</strong> page, copy and store the <strong>Application (client) ID</strong> and the <strong>Directory (tenant) ID</strong> - you will paste both into the custom connector.
+          <div class="step-sublist">
+            <div class="sub">Application (client) ID - identifies the app</div>
+            <div class="sub">Directory (tenant) ID - identifies your tenant</div>
+          </div>
+          <div class="step-img"><img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/40-App-Settings.png?raw=true" alt="App registration overview showing client ID and tenant ID" /></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">Open <strong>API permissions</strong> and add the Microsoft Graph permissions the integration needs, then click <strong>Grant admin consent</strong> so the status turns green.
+          <div class="step-sublist">
+            <div class="sub"><code>Agent.Read.All</code> - Application - read all agents</div>
+            <div class="sub"><code>Application.Read.All</code> - Application - read all applications</div>
+            <div class="sub"><code>User.Read</code> - Delegated - sign in and read user profile</div>
+          </div>
+          <div class="step-img"><img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/40-App-API-permissions.png?raw=true" alt="Microsoft Graph API permissions granted for the app registration" /></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">Go to <strong>Certificates &amp; secrets &gt; New client secret</strong>, add a description and expiry, then <strong>copy the secret Value immediately</strong> - it is only shown once.
+          <div class="note"><strong>Important:</strong> Copy the <em>Value</em>, not the Secret ID. Store it somewhere safe (Key Vault or your password manager) and set a calendar reminder before it expires.</div>
+          <div class="step-img"><img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/40-App-Secret.png?raw=true" alt="Creating a client secret and copying its value" /></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cred-grid">
+      <div class="cred-card">
+        <div class="cred-icon cd-1">🏢</div>
+        <h4>Tenant ID</h4>
+        <p>Directory (tenant) ID from the app Overview page.</p>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon cd-2">🆔</div>
+        <h4>Client ID</h4>
+        <p>Application (client) ID from the app Overview page.</p>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon cd-3">🔑</div>
+        <h4>Client Secret</h4>
+        <p>The secret <em>Value</em> - shown only once at creation.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="stage-head">
+      <div class="stage-num">11</div>
+      <div class="stage-head-text">
+        <span class="stage-tag">Custom connector</span>
+        <h3>Configure &amp; authenticate the custom connector</h3>
+        <p>Paste the credentials into the connector, then feed its redirect URL back into the app registration.</p>
+      </div>
+      <div class="stage-time">⏱ ~8 min</div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">Go to <a href="https://make.powerapps.com" target="_blank" rel="noopener noreferrer">make.powerapps.com</a>, confirm the correct environment, and open <strong>More &gt; Discover all &gt; Custom connectors</strong>.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">Open the <strong>AI Agent Central A365</strong> connector that came with the solution and click <strong>Edit</strong>.
+          <div class="step-img"><img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/40-CustomConnector-01.png?raw=true" alt="Editing the AI Agent Central A365 custom connector" /></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">Go to the <strong>Security</strong> tab and click <strong>Edit</strong>. Confirm <strong>OAuth 2.0</strong> is the authentication type and <strong>Azure Active Directory</strong> the identity provider, then fill in the fields with the values you captured.
+          <div class="step-sublist">
+            <div class="sub"><strong>Client ID</strong> - Application (client) ID</div>
+            <div class="sub"><strong>Client secret</strong> - the secret Value</div>
+            <div class="sub"><strong>Tenant ID</strong> - Directory (tenant) ID</div>
+            <div class="sub"><strong>Resource URL</strong> - <code>https://graph.microsoft.com</code></div>
+          </div>
+          <div class="step-img"><img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/40-CustomConnector-02.png?raw=true" alt="OAuth 2.0 security settings on the custom connector" /></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">Click <strong>Update connector</strong> to save. A <strong>Redirect URL</strong> now appears at the bottom of the Security tab - <strong>copy it</strong>.
+          <div class="note"><strong>Tip:</strong> It looks like <code>https://global.consent.azure-apim.net/redirect/...</code> and is unique to this connector.</div>
+          <div class="step-img"><img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/40-CustomConnector-03.png?raw=true" alt="Copying the connector redirect URL" /></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">Back in the <a href="https://entra.microsoft.com" target="_blank" rel="noopener noreferrer">Entra admin center</a>, open your app registration &gt; <strong>Authentication</strong> &gt; <strong>Add a platform</strong> &gt; <strong>Web</strong>, paste the redirect URL as a <strong>Redirect URI</strong>, and click <strong>Save</strong>.
+          <div class="step-img"><img src="https://github.com/BojanBuhac/AI-Agent-Central/blob/main/images/40-App-RedirectWebURL.png?raw=true" alt="Adding the connector redirect URL as a Web redirect URI" /></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <div class="step-body">Return to the connector, open the <strong>Test</strong> tab, and click <strong>New connection</strong>. Sign in and consent when prompted - this authenticates the connector.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">7</div>
+        <div class="step-body">Run a test operation and confirm you get a <strong>200</strong> response before moving on.
+          <div class="note"><strong>If it fails:</strong> a redirect-URI mismatch means the URL was not saved correctly in Entra; a 401 or 403 usually means admin consent was never granted on the API permissions.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="stage-head">
+      <div class="stage-num">12</div>
+      <div class="stage-head-text">
+        <span class="stage-tag">Power Automate</span>
+        <h3>Check the agent collection flows</h3>
+        <p>Two cloud flows populate Dataverse with your Agent 365 estate - make sure both are on and connected.</p>
+      </div>
+      <div class="stage-time">⏱ ~5 min</div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">Go to <a href="https://make.powerautomate.com" target="_blank" rel="noopener noreferrer">make.powerautomate.com</a> and confirm the correct environment is selected.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">Open <strong>Solutions &gt; AI Agents Governance Hub &gt; Cloud flows</strong> and locate the two collection flows.
+          <div class="step-sublist">
+            <div class="sub"><strong>Collect agents</strong> - pulls the agent inventory from Agent 365</div>
+            <div class="sub"><strong>Collect agent details</strong> - enriches each agent with its full profile</div>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">Open each flow and check the <strong>connections</strong>. Any connection showing a warning must be re-pointed at the custom connector connection you just authenticated.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">Make sure both flows are <strong>turned on</strong>, then run <strong>Collect agents</strong> manually and confirm it succeeds.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">Run <strong>Collect agent details</strong> and confirm success, then open the <strong>Agent 365</strong> tab in AI Agent Central - your agents should now be listed.
+          <div class="note"><strong>Tip:</strong> Leave both flows on a recurring schedule so the catalog keeps pace with your tenant.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FIRST STEPS -->
 <section id="first-steps">
   <div class="section-head">
-    <span class="eyebrow">Stage 5</span>
+    <span class="eyebrow">Stage 6</span>
     <h2 class="section-title">First steps inside the app</h2>
     <p class="section-lead">Configure your organization's foundation - business units, goals, and KPIs - before onboarding teams.</p>
   </div>
 
   <div class="stage">
     <div class="stage-head">
-      <div class="stage-num">10</div>
+      <div class="stage-num">13</div>
       <div class="stage-head-text">
         <span class="stage-tag">In-App Setup</span>
         <h3>Business Units, Goals, and KPIs</h3>
@@ -2786,8 +3317,8 @@ body[data-page="deploy"] .to-top{bottom:88px}
           <div class="lbl">Power Platform environment</div>
         </div>
         <div class="summary-stat">
-          <div class="num">1</div>
-          <div class="lbl">Code app shared</div>
+          <div class="num">2</div>
+          <div class="lbl">Code apps shared</div>
         </div>
         <div class="summary-stat">
           <div class="num">2</div>
@@ -3107,6 +3638,7 @@ body[data-page="deploy"] .to-top{bottom:88px}
     <div style="display:flex;gap:18px;flex-wrap:wrap">
       <a href="#" data-goto="overview">Overview</a>
       <a href="#" data-goto="agent365">Agent 365</a>
+      <a href="#" data-goto="aihub">AI Hub</a>
       <a href="#" data-goto="deploy">Deployment</a>
       <a href="#" data-goto="pillars">Pillar templates</a>
       <a href="https://github.com/BojanBuhac/AI-Agent-Central" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -3129,7 +3661,7 @@ body[data-page="deploy"] .to-top{bottom:88px}
 <script>
 /* ---------- page router ---------- */
 (function(){
-  var PAGES = ['overview','agent365','deploy','pillars'];
+  var PAGES = ['overview','agent365','aihub','deploy','pillars'];
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
   function show(name, push){
     if(PAGES.indexOf(name) === -1) name = 'overview';
